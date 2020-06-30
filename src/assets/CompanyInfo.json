@@ -1,0 +1,14 @@
+{
+    "Companyinfo": {
+        "CompanyName": "CompanyName",
+        "logoURL": "assets/images/logo.PNG",
+        "OfficeAddres": {
+            "Area": "930, Nana Peth, Hundekari Plaza,1st Floor, Next to Kirad Hospital",
+            "Pin": "411002",
+            "Mobile": "+91- 976 251 9030"
+        },
+        "Phone":"+91-20-6521 3786",
+        "Email":"info@sysconelevator.com"
+
+    }
+}

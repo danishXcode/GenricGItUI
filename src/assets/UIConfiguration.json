@@ -1,0 +1,32 @@
+{
+    "elements": [
+        {
+            "elementName": "navbar",
+            "settings": {
+                "title": "Gallery",
+                "url": "core/gallery"
+            }
+        },
+        {
+            "elementName": "navbar",
+            "settings": {
+                "title": "header",
+                "url": "core/header"
+            }
+        },
+        {
+            "elementName": "navbar",
+            "settings": {
+                "title": "About",
+                "url": "core/about"
+            }
+        },
+        {
+            "elementName": "navbar",
+            "settings": {
+                "title": "Product",
+                "url": "core/products"
+            }
+        }
+    ]
+}

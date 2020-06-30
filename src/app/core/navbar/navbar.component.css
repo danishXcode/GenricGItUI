@@ -1,0 +1,12 @@
+.img-fluid-con {
+    max-width: 20% !important;
+    margin-right: 20% !important;
+  }
+
+  .img-fluid {
+    max-width: 7% !important;
+    margin-right: 7% !important;
+  }
+nav{
+  margin-top: 0px;
+}

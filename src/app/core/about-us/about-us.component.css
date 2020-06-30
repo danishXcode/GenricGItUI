@@ -1,0 +1,30 @@
+.aboutus-head{
+background-color: #f0f1f2;
+height: auto;
+}
+.container
+{
+    display:inline-flex;
+    flex-direction:row;
+    margin-bottom: 10px !important;
+} 
+.inter-con
+{
+    flex-direction:column;
+}
+.whyus{
+    text-align: center;
+    text-underline-position: below
+}
+.card-deck{
+    padding-top: 10px;
+    padding-bottom: 10px
+}
+
+  @media screen and (max-width: 500px) {
+    .container
+    {
+        display:inline-flex;
+        flex-direction:column;
+    }   
+  } 
