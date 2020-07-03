@@ -1,0 +1,9 @@
+.cdk-overlay-container
+{
+    
+        display:flex;
+        position: fixed;
+        left: 400px;
+        top: 200px;   
+      
+}
