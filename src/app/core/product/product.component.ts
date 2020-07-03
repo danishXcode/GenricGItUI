@@ -15,24 +15,41 @@ export class ProductComponent implements OnInit,OnDestroy {
 Products:Products;
   Product:Product;
   JsonReadSubscription : Subscription;
+
   constructor(private route: ActivatedRoute,
     private ProductServiceService : ProductServiceService
-    ) {}
+    ) {
+
+      route.params.subscribe(val => {
+        this.route.params.subscribe(params => {
+          this.Pid = params.Pid;
+          });
+    
+          this.JsonReadSubscription = this.ProductServiceService.getJSON().subscribe(data => {
+            data.Products.forEach(element => {
+              if(element.ProductId==this.Pid)
+              {
+                this.Product=element;
+              }
+            });
+        });
+      });
+    }
 
   ngOnInit(): void {
 
-    this.route.params.subscribe(params => {
-      this.Pid = params.Pid;
-      });
+    // this.route.params.subscribe(params => {
+    //   this.Pid = params.Pid;
+    //   });
 
-      this.JsonReadSubscription = this.ProductServiceService.getJSON().subscribe(data => {
-        data.Products.forEach(element => {
-          if(element.ProductId==this.Pid)
-          {
-            this.Product=element;
-          }
-        });
-    });
+    //   this.JsonReadSubscription = this.ProductServiceService.getJSON().subscribe(data => {
+    //     data.Products.forEach(element => {
+    //       if(element.ProductId==this.Pid)
+    //       {
+    //         this.Product=element;
+    //       }
+    //     });
+    // });
   }
 
   

@@ -36,7 +36,7 @@ export class ProductsComponent implements OnInit,OnDestroy {
   redirect(pagename: string)
   {
     console.log("redirecvt to "+pagename);
-    this.router.navigate(['/'+pagename]);
+    this.router.navigate(['/'+pagename,{dummyData: (new Date).getTime()}]);
   }
 
 

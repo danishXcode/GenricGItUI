@@ -1,3 +1,25 @@
 body{
     margin-top: 0px;
 }
+
+html {
+    font-size: 1rem;
+  }
+  
+
+h1 {font-size:1rem;} /*1rem = 16px*/
+/*
+####################################################
+M E D I A  Q U E R I E
+ S@media (min-width: 544px) {  
+    html {font-size:1.5rem;} /*1rem = 16px*/
+/*}
+####################################################
+*/
+
+/*
+::::::::::::::::::::::::::::::::::::::::::::::::::::
+Bootstrap 4 breakpoints
+*/
+/* Small devices (landscape phones, 544px and up) */
+
