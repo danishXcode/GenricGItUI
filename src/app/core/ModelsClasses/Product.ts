@@ -1,6 +1,8 @@
+
 export class ProducInfo {
     InfoDetailsPrimary: string;
     InfoDetailsSecondary: string;
+    InfoDetails: string;
 }
 
 export class ImagesUrl {
