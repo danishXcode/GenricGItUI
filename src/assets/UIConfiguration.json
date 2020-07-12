@@ -27,6 +27,13 @@
                 "title": "Product",
                 "url": "core/products"
             }
+        },
+        {
+            "elementName": "navbar",
+            "settings": {
+                "title": "Enquiry",
+                "url": "core/form"
+            }
         }
     ]
 }

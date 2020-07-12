@@ -14,12 +14,13 @@ import { AboutUsComponent } from './about-us/about-us.component';
 import { ProductsComponent } from './products/products.component';
 import { ProductComponent } from './product/product.component';
 import { ProductinfoComponent } from './productinfo/productinfo.component';
+import { FormComponent } from './form/form.component';
 
 
 
 
 @NgModule({
-  declarations: [NavbarComponent, GalleryComponent, CoreheadersComponent,CoreFooterComponent, MyhomeComponent, AboutUsComponent, ProductsComponent, ProductComponent, ProductinfoComponent ],
+  declarations: [NavbarComponent, GalleryComponent, CoreheadersComponent,CoreFooterComponent, MyhomeComponent, AboutUsComponent, ProductsComponent, ProductComponent, ProductinfoComponent, FormComponent ],
   imports: [
     CommonModule,
     CoreRoutingModule,
@@ -36,7 +37,8 @@ import { ProductinfoComponent } from './productinfo/productinfo.component';
       GalleryComponent,
       ProductsComponent,
       ProductComponent,
-      ProductinfoComponent
+      ProductinfoComponent,
+      FormComponent
     ],
 })
 export class CoreModule { }

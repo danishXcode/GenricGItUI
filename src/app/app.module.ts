@@ -1,3 +1,4 @@
+import { FormsModule } from '@angular/forms';
 
 import { CoreModule } from './core/core.module';
 import { BrowserModule } from '@angular/platform-browser';
@@ -26,7 +27,8 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
     NgbModule,
     BrowserAnimationsModule,
     GalleryModule,
-    LightboxModule
+    LightboxModule,
+    FormsModule 
   ],
   providers: [],
   bootstrap: [AppComponent]

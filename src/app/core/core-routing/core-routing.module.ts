@@ -1,3 +1,4 @@
+import { FormComponent } from './../form/form.component';
 import { ProductsComponent } from './../products/products.component';
 import { AboutUsComponent } from './../about-us/about-us.component';
 import { GalleryComponent } from './../gallery/gallery.component';
@@ -16,7 +17,8 @@ const routes: Routes = [ {
     { path: 'header', component: CoreheadersComponent },
     { path: 'about', component: AboutUsComponent },
     { path: 'products', component: ProductsComponent },
-    { path: 'product/:Pid', component: ProductComponent }
+    { path: 'product/:Pid', component: ProductComponent },
+    { path: 'form', component: FormComponent }
   ]
 },];
 
