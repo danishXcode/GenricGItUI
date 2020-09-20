@@ -1,0 +1,42 @@
+<div class="container">  
+    <div class="row">  
+        <div class="form_bg">  
+            <form #regForm='ngForm' (ngSubmit)="Register(regForm)" >  
+                 <h2 class="text-center">Mail send service</h2>  
+                <br/>  
+                 <div class="form-group">  
+                </div>  
+                <div class="form-group">  
+                    
+                
+                    <input type="text" class="form-control" disabled placeholder="danish77shaikh@gmail.com" name="fromMail" ngModel >   
+                    <p>Disabled as you need to create MFA auth on your account to enter this details </p>
+                </div> 
+                <div class="form-group">  
+                    <textarea class="form-control" placeholder="To Mail ! Comma Sperated if multiple receivers" name="toMail" ngModel > </textarea>
+                </div> 
+                <div class="form-group">  
+                    <input type="text" class="form-control" placeholder="CC to" name="ccmail" ngModel >   
+                </div>
+                <div class="form-group">  
+                    <textarea type="text" class="form-control" placeholder="Mail subject" name="subject" ngModel > </textarea>
+                </div>
+               
+                <div class="form-group">  
+                    <textarea class="form-control" placeholder="Mail Body" name="Body" ngModel > </textarea>
+                </div>
+                
+                <div class="form-group">  
+               
+                    <input type="text" class="form-control" disabled placeholder="App PassWord" name="PassWord" ngModel >  
+                    <p>Disabled as you need to create new App password using your smtp provider like google app PassWord </p> 
+                </div>
+
+                <br/>  
+                <div class="align-center">  
+                    <button type="submit" class="btn btn-default" id="register"  >Click to Send Mail</button>  
+                </div>  
+            </form>  
+        </div>  
+    </div>  
+  </div>

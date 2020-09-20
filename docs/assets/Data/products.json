@@ -1,0 +1,68 @@
+{
+    "Products": [
+        {   
+            "ProductId":"1",
+            "ProductName": "Service 1",
+            "ProducInfo": {
+                "InfoDetailsPrimary": "This is a longer card with supporting text below as a natural lead-in to additional content. This content is a little bit longer",
+                "InfoDetailsSecondary": " InfoDetailsSecondary Last updated 3 mins ago",
+                "InfoDetails":"This is a longer card with supporting text below as a natural lead-in to additional content. This content is a little bit longer, This is a longer card with supporting text below as a natural lead-in to additional content. This content is a little bit longer This is a longer card with supporting text below as a natural lead-in to additional content. This content is a little bit longer"
+            },
+            "ImagesUrl":[
+                {
+                    "ImageUrl":"assets/images/m1.jpg"
+                },
+                {
+                    "ImageUrl":"assets/images/m1.jpg"
+                },
+                {
+                    "ImageUrl":"assets/images/m1.jpg"
+                }
+            ],
+            "CardImage":"assets/images/cards/m1.jpg"
+        },
+        {
+            "ProductId":"2",
+            "ProductName": "Service 2",
+            "ProducInfo": {
+                "InfoDetailsPrimary": "This is a longer card with supporting text below as a natural lead-in to additional content. This content is a little bit longer",
+                "InfoDetailsSecondary": "Last updated 3 mins ago",
+                "InfoDetails":"This is a longer card with supporting text below as a natural lead-in to additional content. This content is a little bit longer, This is a longer card with supporting text below as a natural lead-in to additional content. This content is a little bit longer This is a longer card with supporting text below as a natural lead-in to additional content. This content is a little bit longer"
+            },
+            "ImagesUrl":[
+                {
+                    "ImageUrl":"assets/images/m2.jpg"
+                },
+                {
+                    "ImageUrl":"assets/images/m1.jpg"
+                },
+                {
+                    "ImageUrl":"assets/images/m4.jpg"
+                }
+            ],
+            "CardImage":"assets/images/cards/m2.jpg"
+        },
+        {
+            "ProductId":"3",
+            "ProductName": "Service 3",
+            "ProducInfo": {
+                "InfoDetailsPrimary": "This is a longer card with supporting text below as a natural lead-in to additional content. This content is a little bit longer",
+                "InfoDetailsSecondary": "Last updated 3 mins ago",
+                "InfoDetails":"This is a longer card with supporting text below as a natural lead-in to additional content. This content is a little bit longer, This is a longer card with supporting text below as a natural lead-in to additional content. This content is a little bit longer This is a longer card with supporting text below as a natural lead-in to additional content. This content is a little bit longer"
+        
+            },
+            "ImagesUrl":[
+                {
+                    "ImageUrl":"assets/images/m4.jpg"
+                },
+                {
+                    "ImageUrl":"assets/images/m4.jpg"
+                },
+                {
+                    "ImageUrl":"assets/images/m4.jpg"
+                }
+            ],
+            "CardImage":"assets/images/cards/m3.jpg"
+        }
+    ]
+}
