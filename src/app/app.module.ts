@@ -1,3 +1,5 @@
+import { PurchaseOrderComponent } from './IMS/purchase-order/purchase-order.component';
+
 import { UMCServicesService } from './UMC/umcservices.service';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
@@ -17,6 +19,7 @@ import { LoginComponent } from './UMC/login/login.component';
 import { RegisterComponent } from './UMC/register/register.component';
 import { JwtInterceptor } from './UMC/JwtInterceptor';
 import { GetdataComponent } from './UMC/getdata/getdata.component';
+import { PurchaseOrdersComponent } from './IMS/purchase-orders/purchase-orders.component';
 
 
 
@@ -26,6 +29,8 @@ import { GetdataComponent } from './UMC/getdata/getdata.component';
     LoginComponent,
     RegisterComponent,
     GetdataComponent,
+    PurchaseOrderComponent,
+    PurchaseOrdersComponent,
   ],
   imports: [
     BrowserModule,

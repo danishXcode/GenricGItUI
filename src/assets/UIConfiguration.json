@@ -55,6 +55,13 @@
                 "title": "GetData",
                 "url": "getdata"
             }
+        },
+        {
+            "elementName": "navbar",
+            "settings": {
+                "title": "PurchaseOrders",
+                "url": "PurchaseOrders"
+            }
         }
     ]
 }

@@ -1,3 +1,5 @@
+import { PurchaseOrdersComponent } from './IMS/purchase-orders/purchase-orders.component';
+import { PurchaseOrderComponent } from './IMS/purchase-order/purchase-order.component';
 import { GetdataComponent } from './UMC/getdata/getdata.component';
 import { LoginComponent } from './UMC/login/login.component';
 import { RegisterComponent } from './UMC/register/register.component';
@@ -10,7 +12,9 @@ const routes: Routes = [
    {path: '',component: MyhomeComponent } ,
   {path : 'Register',component : RegisterComponent},
   {path : 'Login',component : LoginComponent},
-  {path : 'getdata',component : GetdataComponent}
+  {path : 'getdata',component : GetdataComponent},
+  {path : 'PurchaseOrders',component : PurchaseOrdersComponent},
+  {path : 'PurchaseOrder/:POName',component : PurchaseOrderComponent}
 ]
 
 @NgModule({

@@ -13,4 +13,8 @@ export class GetdataComponent implements OnInit {
   ngOnInit(): void {
     this.service.GetData();
   }
+
+  Logout(){
+    this.service.logout();
+  }
 }

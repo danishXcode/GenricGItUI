@@ -1,0 +1,20 @@
+.whyus{
+    text-align: center;
+    text-underline-position: below
+}
+.card-deck{
+    padding-top: 10px;
+    padding-bottom: 10px
+}
+.productcontainer{
+    
+    margin-left: 5%;
+
+}
+.headline{
+    margin-top: 20px;
+}
+.checkdetails{
+    margin-top: 5px;
+    text-align: center;
+}

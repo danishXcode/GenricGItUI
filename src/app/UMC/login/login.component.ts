@@ -20,6 +20,7 @@ export class LoginComponent implements OnInit {
 
   onLoginSubmit()
   {
+    console.log("onLoginSubmit");
     this.service.Login();
   }
 }

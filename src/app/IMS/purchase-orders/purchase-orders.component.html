@@ -1,0 +1,21 @@
+<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 productcontainer">
+    <h3 class="headline">
+        Our services.
+    </h3>    
+    <div class="card-deck">
+
+            <div class="card col-lg-3 col-md-3" *ngFor="let PO of POS" >
+                <div class="card-body">
+                    <h5 class="card-title">{{ PO.purchaseOrderName }}</h5>
+                    <p class="card-text">{{ PO.dateLoged}}</p>
+                    <div class="card-footer">
+                        <small class="text-muted">{{ PO.isComplited }}</small>
+                    </div>
+                    
+                </div>
+                <button (click)="redirect('/PurchaseOrder/'+ PO.purchaseOrderName)" class="btn btn-primary checkdetails">Check Details</button>
+            </div>
+           
+     </div>
+    
+ </div> 
