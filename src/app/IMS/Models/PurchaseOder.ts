@@ -9,6 +9,7 @@ export class PurchaseOrderModel
         paid: number;
         isComplited: boolean;
         approvedBy?: null;
+        requiredDate:string;
    
 }
 

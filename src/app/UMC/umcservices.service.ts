@@ -51,7 +51,7 @@ export class UMCServicesService {
     //const config = { headers: new Hpp().set('Content-Type', 'application/json') };
     return this.http.post<any>(this.URL+'login', data,headers).subscribe({
       next: data => {
-        console.log("Login success")
+        alert("Login success")
         console.log(data)
         var tkn = data.token.result
         localStorage.setItem('currentUser', JSON.stringify(data.token.result));

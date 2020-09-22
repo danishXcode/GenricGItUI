@@ -1,3 +1,5 @@
+import { IMSApiCallService } from './IMS/services/imsapi-call.service';
+import { MaterialModule } from './material/material.module';
 import { PurchaseOrderComponent } from './IMS/purchase-order/purchase-order.component';
 
 import { UMCServicesService } from './UMC/umcservices.service';
@@ -20,6 +22,7 @@ import { RegisterComponent } from './UMC/register/register.component';
 import { JwtInterceptor } from './UMC/JwtInterceptor';
 import { GetdataComponent } from './UMC/getdata/getdata.component';
 import { PurchaseOrdersComponent } from './IMS/purchase-orders/purchase-orders.component';
+import { isMainThread } from 'worker_threads';
 
 
 
@@ -42,10 +45,11 @@ import { PurchaseOrdersComponent } from './IMS/purchase-orders/purchase-orders.c
     GalleryModule,
     LightboxModule,
     FormsModule ,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    MaterialModule
   ],
   providers: [UMCServicesService,
-    { provide: HTTP_INTERCEPTORS, useClass: JwtInterceptor, multi: true },],
+    { provide: HTTP_INTERCEPTORS, useClass: JwtInterceptor, multi: true },IMSApiCallService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

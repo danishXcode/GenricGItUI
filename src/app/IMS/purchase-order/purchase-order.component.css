@@ -18,3 +18,7 @@
     margin-top: 5px;
     text-align: center;
 }
+.controles-container > *
+{
+    width: 100%;
+}

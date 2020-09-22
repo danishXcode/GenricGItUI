@@ -11,6 +11,7 @@ describe('PurchaseOrdersComponent', () => {
       declarations: [ PurchaseOrdersComponent ]
     })
     .compileComponents();
+  
   }));
 
   beforeEach(() => {
