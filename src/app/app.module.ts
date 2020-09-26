@@ -23,6 +23,11 @@ import { JwtInterceptor } from './UMC/JwtInterceptor';
 import { GetdataComponent } from './UMC/getdata/getdata.component';
 import { PurchaseOrdersComponent } from './IMS/purchase-orders/purchase-orders.component';
 import { isMainThread } from 'worker_threads';
+import { ProductstableComponent } from './productstable/productstable.component';
+import { MatTableModule } from '@angular/material/table';
+import { MatPaginatorModule } from '@angular/material/paginator';
+import { MatSortModule } from '@angular/material/sort';
+import { PurchaseOrderItmesComponent } from './IMS/purchase-order-itmes/purchase-order-itmes.component';
 
 
 
@@ -34,6 +39,8 @@ import { isMainThread } from 'worker_threads';
     GetdataComponent,
     PurchaseOrderComponent,
     PurchaseOrdersComponent,
+    ProductstableComponent,
+    PurchaseOrderItmesComponent,
   ],
   imports: [
     BrowserModule,
@@ -46,7 +53,10 @@ import { isMainThread } from 'worker_threads';
     LightboxModule,
     FormsModule ,
     ReactiveFormsModule,
-    MaterialModule
+    MaterialModule,
+    MatTableModule,
+    MatPaginatorModule,
+    MatSortModule
   ],
   providers: [UMCServicesService,
     { provide: HTTP_INTERCEPTORS, useClass: JwtInterceptor, multi: true },IMSApiCallService],

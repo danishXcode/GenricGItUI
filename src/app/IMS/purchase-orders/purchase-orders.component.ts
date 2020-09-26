@@ -61,6 +61,6 @@ export class PurchaseOrdersComponent implements OnInit {
   OnSubmitAdd()
   {
     this.imsApiCallService.AadPurchaseOrder();
-    this.reloadData();
+    
   }
 }

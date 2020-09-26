@@ -1,10 +1,13 @@
 
- <!-- <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
  <h1 >
-     {{PO.purchaseOrderName}}
+   purchase order name  :   {{PO.purchaseOrderName}}
  </h1>
+ <h2>
+    POID : {{PO.purchaseOrderID}}
+ </h2>
  <h3>
-    DateLoged :  {{PO.dateLoged}}
+    DateLoged :  {{PO.dateLoged | date: 'dd/MM/yyyy hh:mm:ss'}}
  </h3>
  <h3>
     Pending:  {{PO.pending}}
@@ -15,33 +18,8 @@
  <h3>
      ApprovedBy : {{PO.approvedBy}}
   </h3>
-</div> -->
-<!-- <form [formGroup]="imsApiCallService.form" class="noraml-form">
-<mat-grid-list cols="2" rowHeight="300px"  >
-   <mat-grid-tile>
-      <div class="controles-container">
-         <mat-form-field>
-         <input type="hidden"  formControlName="$key">
-      </mat-form-field>
-      <mat-form-field> 
-        Input :  <input matInput formControlName="purchaseOrderName"  placeholder="purchaseOrderName" />
-      </mat-form-field>
-      <mat-form-field>
-         <input  formControlName="requiredDate" matInput placeholder="rurchaseOrderName" />
-      </mat-form-field>
-
-      </div>
-
-   </mat-grid-tile>
-
-</mat-grid-list>
-</form> -->
-
-<div class="container">
-   <mat-toolbar>
-    <span class="fill-remaining-space"></span>
-    <span class="fill-remaining-space">some span 1 text</span>
-    <input  formControlName="purchaseOrderName"  placeholder="purchaseOrderName" />
-    <span class="fill-remaining-space"></span>
-   </mat-toolbar>
 </div>
+
+<app-purchase-order-itmes [PurchaseOrderItemModels]="PO.items" [_POID]="PO.purchaseOrderID">
+
+</app-purchase-order-itmes>

@@ -1,0 +1,9 @@
+.full-width-table {
+  width: 60%;
+}
+.tableContainer{
+  max-width: 60%;
+}
+th{
+  font-size: 20px;
+}

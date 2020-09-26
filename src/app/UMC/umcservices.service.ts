@@ -1,3 +1,4 @@
+import { UMCConstantsService } from './umcconstants.service';
 import { LoginComponent } from './login/login.component';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Injectable } from '@angular/core';
@@ -10,7 +11,7 @@ import { BehaviorSubject, Observable } from 'rxjs';
 })
 export class UMCServicesService {
   
-  private readonly URL = 'https://localhost:44364/user/';
+  private  URL ;LoginURl;RegisterURL : string =  "";
   private currentUserSubject: BehaviorSubject<string>;
   public currentUser: Observable<string>;
 
@@ -25,10 +26,15 @@ export class UMCServicesService {
   Password : [''],
   })
 
-  constructor(private http: HttpClient,private fb : FormBuilder) 
+  constructor(private http: HttpClient,private fb : FormBuilder,_UMCConstantsService:UMCConstantsService) 
   {
     this.currentUserSubject = new BehaviorSubject<string>(JSON.parse(localStorage.getItem('currentUser')));
     this.currentUser = this.currentUserSubject.asObservable();
+    this.URL = _UMCConstantsService.Url;
+    this.LoginURl = _UMCConstantsService.LoginUrl;
+    this.RegisterURL = _UMCConstantsService.RegisterURl;
+
+
   }
 
  
@@ -49,7 +55,7 @@ export class UMCServicesService {
       headers: new  HttpHeaders({'Content-Type':'application/json; charset=utf-8'})
     };
     //const config = { headers: new Hpp().set('Content-Type', 'application/json') };
-    return this.http.post<any>(this.URL+'login', data,headers).subscribe({
+    return this.http.post<any>(this.URL+this.LoginURl, data,headers).subscribe({
       next: data => {
         alert("Login success")
         console.log(data)
@@ -68,12 +74,12 @@ export class UMCServicesService {
      FullName : this.RegistrationFormModel.value.FullName,
      Password : this.RegistrationFormModel.value.Password,
    };
-   console.log(body);
+
    const data =  JSON.stringify(body); 
    const headers =  {
     headers: new  HttpHeaders({'Content-Type':'application/json; charset=utf-8'})
   };
-   return  this.http.post(this.URL+'RegisterTenant',data,headers);
+   return  this.http.post(this.URL+this.RegisterURL,data,headers);
  }
 
  GetData()
@@ -85,6 +91,8 @@ export class UMCServicesService {
      }
    })
  }
+
+
 
  logout() {
   // remove user from local storage to log user out

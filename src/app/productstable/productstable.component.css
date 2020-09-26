@@ -1,0 +1,31 @@
+.full-width-table {
+  width: 100%;
+}
+
+
+.btn-blue {
+  background-color: #1A237E;
+  width: 150px;
+  color: #fff;
+  border-radius: 2px
+}
+
+.btn-blue:hover {
+  background-color: #000;
+  cursor: pointer
+}
+
+.bg-blue {
+  color: #fff;
+  background-color: #1A237E
+}
+
+.grey
+{
+    background-color: grey;
+}
+.green
+{
+    background-color: green;
+}
+

@@ -1,27 +1,28 @@
-export class PurchaseOrderModel
-{
-      
+export class PurchaseOrderModel {
+      purchaseOrderID: string;
       purchaseOrderName: string;
-      dateLoged: string;
-        items?: PurchaseOrderItemModel[]
-        totalAmaount: number;
-        pending: number;
-        paid: number;
-        isComplited: boolean;
-        approvedBy?: null;
-        requiredDate:string;
-   
+      dateLoged: Date;
+      items?: PurchaseOrderItemModel[]
+      totalAmaount: number;
+      pending: number;
+      paid: number;
+      isComplited: boolean;
+      approvedBy?: null;
+      requiredDate: string;
+
 }
 
-export class PurchaseOrderModels
-{
-      PurchaseOrderModelList : PurchaseOrderModel[]
+export class PurchaseOrderModels {
+      PurchaseOrderModelList: PurchaseOrderModel[]
 }
 
 
-export class PurchaseOrderItemModel
-{
-      ItemName :String;
-      Quantity : Number;
-      Amount :Number
+export class PurchaseOrderItemModel {
+      amount: number;
+      itemId: string;
+      itemName: string;
+      purchaseOrderID: string;
+      quantity: number;
+      total : number;
+
 }

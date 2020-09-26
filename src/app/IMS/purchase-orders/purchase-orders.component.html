@@ -1,4 +1,4 @@
-<button (click)="ShowPO()" class="btn btn-primary" style="float: right;">Add PurchaseOrder</button>
+<!-- <button (click)="ShowPO()" class="btn btn-primary" style="float: right;">Add PurchaseOrder</button>
 
  
  <table class="table table-striped">
@@ -37,4 +37,23 @@
 </form>
 </div>
 
+ -->
+ <!-- <button (click)="ShowPO()" class="btn btn-primary" style="float: right;">Add PurchaseOrder</button>
+ <div class="col-lg-6" *ngIf="div1" >
+  <form [formGroup]="imsApiCallService.AddPurchaseOrderFormModel" autocomplete="on" (submit)="OnSubmitAdd()">
+  <div class="card2 card border-0 px-4 py-5">
+      <div class="row px-3"> <label class="mb-1">
+              <h6 class="mb-0 text-sm">PurchaseOrderName </h6>
+          </label> <input class="mb-4" type="text" name="UserName" placeholder="Enter a valid UserName" class="form-control" formControlName="PurchaseOrderName"> </div>
+      <div class="row px-3"> <label class="mb-1">
+              <h6 class="mb-0 text-sm">RequiredDate</h6>
+          </label>
+           <input type="date" name="date" placeholder="Enter date" class="form-control" formControlName="RequiredDate"> 
+          </div>
+      <div class="row mb-3 px-3"> <button type="submit" class="btn btn-blue text-center">Add</button> </div>
+  </div>
+</form>
+</div> -->
+<app-productstable>
 
+</app-productstable>

@@ -1,3 +1,6 @@
+import { APIconstantsService } from './../apiconstants.service';
+import { JsonReadServiceService } from './../../services/json-read-service.service';
+import { PurchaseOrderItemModel } from './../Models/PurchaseOder';
 import { filter } from 'rxjs/operators';
 import { Observable } from 'rxjs';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
@@ -9,8 +12,16 @@ import { FormControl, FormGroup, FormBuilder } from '@angular/forms';
   providedIn: 'root'
 })
 export class IMSApiCallService {
-  private readonly URL = 'https://localhost:44364/PurchaseOrder/';
-  constructor(private http: HttpClient,private fb : FormBuilder) { }
+    
+  private  URL;AddPoURL ;GetPOSURl ;AddPOIURl;DeletePOOrderItemURL : string ="";
+
+  constructor(private http: HttpClient,private fb : FormBuilder,_APIconstantsService:APIconstantsService) { 
+    this.URL = _APIconstantsService.BasePurchaseOrderURL;
+    this.AddPoURL = _APIconstantsService.AddPurhcaseOrderURL;
+    this.GetPOSURl =_APIconstantsService.GetPurchaseOrderURL;
+    this.AddPOIURl = _APIconstantsService.AddPurhcaseOrderItemURL;
+    this.DeletePOOrderItemURL =_APIconstantsService.DeletePOOrderItemURL;
+  }
 
   
   form : FormGroup = new FormGroup({
@@ -22,15 +33,24 @@ export class IMSApiCallService {
   AddPurchaseOrderFormModel = this.fb.group({
     PurchaseOrderName : [''],
     RequiredDate : [''],
-    })
+    });
 
+    AddPOItemFormModel = this.fb.group({
+      amount: [''],
+      itemName: [''],
+      purchaseOrderID: [''],
+      quantity: [''],
+      })
+  
+     public FormDataOrderItem: PurchaseOrderItemModel;
   GetAll() : Observable<PurchaseOrderModel[]>
   {
-    return this.http.get<PurchaseOrderModel[]>(this.URL+"GetPO");
+    console.log(this.URL+this.GetPOSURl);
+    return this.http.get<PurchaseOrderModel[]>(this.URL+this.GetPOSURl);
   }
   GetById(id : any) : Observable<PurchaseOrderModel>
   {
-    return this.http.get<PurchaseOrderModel>(this.URL+"GetPO").pipe(filter(p=>p.purchaseOrderName == id));
+    return this.http.get<PurchaseOrderModel>(this.URL+this.GetPOSURl).pipe(filter(p=>p.purchaseOrderName == id));
   }
 
   AadPurchaseOrder()
@@ -44,14 +64,39 @@ export class IMSApiCallService {
     const headers =  {
       headers: new  HttpHeaders({'Content-Type':'application/json; charset=utf-8'})
     };
-    //const config = { headers: new Hpp().set('Content-Type', 'application/json') };
-    return this.http.post<any>(this.URL+'AddPo', data,headers).subscribe({
-      next: data => {
-        alert("Record Added")
-        console.log(data)
-      },
-      error: error => console.error('There was an error!', error)
-  });
+  return this.http.post<any>(this.URL+this.AddPoURL, data,headers);
+  }
+
+  AddPOItem()
+  {
+
+   
+    var body = {
+      ItemName : this.AddPOItemFormModel.value.itemName,
+      Quantity : parseInt(this.AddPOItemFormModel.value.quantity),
+      Amount :parseInt( this.AddPOItemFormModel.value.amount),
+      PurchaseOrderID : this.AddPOItemFormModel.value.purchaseOrderID,
+    };
+    console.log("AddPOItem");
+    console.log(body);
+    const data =  JSON.stringify(body);  
+    const headers =  {
+      headers: new  HttpHeaders({'Content-Type':'application/json; charset=utf-8'})
+    };
+  return this.http.post<any>(this.URL+this.AddPOIURl, data,headers);
+  }
+
+  DeletePOOrderItem(POid,POIiD)
+  {
+   var body = {
+     PurhcaseId : POid,
+     ItemID :POIiD,
+   };
+   const data =  JSON.stringify(body); 
+   const headers =  {
+    headers: new  HttpHeaders({'Content-Type':'application/json; charset=utf-8'})
+  };
+    return this.http.post(this.URL+ this.DeletePOOrderItemURL,data,headers);
   }
 
 }
