@@ -14,6 +14,7 @@ export class RegisterComponent implements OnInit {
   }
   onRegisterSubmit()
   {
+    console.log("On Submit called");
     this.service.Register().subscribe({
       next: data => console.log(data),
       error: error => console.error('There was an error!', error)

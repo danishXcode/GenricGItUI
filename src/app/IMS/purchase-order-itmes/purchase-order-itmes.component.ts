@@ -56,6 +56,8 @@ POid:string;
     this.imsApiCallService.DeletePOOrderItem(this.POid,POIiD).subscribe({
       next:data=>console.log(data),
     });
+    
+    window.location.reload();
   }
   OnSubmitAddItem() {
     let Poid = this.imsApiCallService.AddPurchaseOrderFormModel.value.purchaseOrderID;

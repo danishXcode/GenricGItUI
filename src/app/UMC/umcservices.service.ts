@@ -52,8 +52,10 @@ export class UMCServicesService {
     console.log(body);
     const data =  JSON.stringify(body);  
     const headers =  {
-      headers: new  HttpHeaders({'Content-Type':'application/json; charset=utf-8'})
+       headers: new  HttpHeaders({'Content-Type':'application/json; charset=utf-8'})
+   //  headers: new  HttpHeaders({'Content-Type':'application/json; charset=utf-8'})
     };
+   // headers.headers.append(" ('Access-Control-Allow-Headers', 'Access-Control-Allow-Origin, Content-Type, Accept, Accept-Language, Origin, User-Agent')")
     //const config = { headers: new Hpp().set('Content-Type', 'application/json') };
     return this.http.post<any>(this.URL+this.LoginURl, data,headers).subscribe({
       next: data => {
