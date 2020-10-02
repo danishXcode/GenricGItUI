@@ -23,7 +23,7 @@ export class ProductstableComponent implements AfterViewInit, OnInit {
 
 
   /** Columns displayed in the table. Columns IDs can be added, removed, or reordered. */
-  displayedColumns = ['purchaseOrderName', 'requiredDate','isComplited'];
+  displayedColumns = ['purchaseOrderName','approvedBy', 'requiredDate','isComplited'];
 
   constructor(public imsApiCallService : IMSApiCallService,private router: Router)
   {
@@ -44,7 +44,7 @@ export class ProductstableComponent implements AfterViewInit, OnInit {
   redirect(pagename: string)
   {
     console.log("redirecvt to "+pagename);
-    this.router.navigate(['/'+pagename,{dummyData: (new Date).getTime()}]);
+    this.router.navigate(['/'+pagename]);
   }
 
   ngAfterViewInit() {
@@ -60,18 +60,13 @@ export class ProductstableComponent implements AfterViewInit, OnInit {
 
   OnSubmitAdd()
   { 
-    this.imsApiCallService.AadPurchaseOrder().subscribe(()=>
-    {
-      this.imsApiCallService.GetAll().subscribe({
-        next:data=>
-        {
-          this.dataSource.data = data;
-        }
-      });
+    this.imsApiCallService.AadPurchaseOrder().subscribe(
+    {next:data=>
+      {
+        console.log(data);
+        
+    window.location.reload();
+      }
     }); 
-
-    this.imsApiCallService.AadPurchaseOrder();
-    this.dataSource.data.push();
-    
   }
 }

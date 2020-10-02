@@ -24,15 +24,26 @@
     </ng-container>
 <!-- 
     Name Column [ngClass]="{'grey':!PO.isComplited,'green':PO.isComplited}" -->
+    
     <ng-container matColumnDef="requiredDate">
       <th mat-header-cell *matHeaderCellDef mat-sort-header>Required Date</th>
-      <td mat-cell *matCellDef="let row">{{row.requiredDate}}</td>
+      <td mat-cell *matCellDef="let row">{{row.requiredDate | date: 'dd/MM/yyyy'}}</td>
+    </ng-container>
+
+    <ng-container matColumnDef="approvedBy">
+      <th mat-header-cell *matHeaderCellDef mat-sort-header>Approved By</th>
+      <td mat-cell *matCellDef="let row">{{row.approvedBy}}</td>
     </ng-container>
 
     <ng-container matColumnDef="isComplited">
       <th mat-header-cell *matHeaderCellDef mat-sort-header>Is Complited</th>
-      <td   mat-cell *matCellDef="let row"[ngClass]="{'grey':!row.isComplited,'green':row.isComplited}" >{{row.isComplited}}
-        <button (click)="redirect('/PurchaseOrder/'+ row.purchaseOrderName)" class="btn btn-primary"style="float: right;">Check Details</button>
+      <td   mat-cell *matCellDef="let row" >
+        <span [ngClass]="{'badge badge-success':row.isComplited}">
+          {{row.isComplited}}
+        </span>
+        <button (click)="redirect('/PurchaseOrder/'+ row.purchaseOrderName)" class="btn btn-primary"style="float: right;">
+          Check Details
+        </button>
       </td>
     </ng-container>
 

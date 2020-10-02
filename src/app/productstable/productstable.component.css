@@ -22,10 +22,15 @@
 
 .grey
 {
-    background-color: grey;
+    color: black;
 }
 .green
 {
-    background-color: green;
+    color: green;
 }
-
+span
+{
+  width: 80px;
+  height: 30px;
+  font-size: medium;
+}

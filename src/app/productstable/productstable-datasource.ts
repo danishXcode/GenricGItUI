@@ -93,6 +93,7 @@ export class ProductstableDataSource extends DataSource<PurchaseOrderModel> {
     if (!this.sort.active || this.sort.direction === '') {
       return data;
     }
+    
 
     return data.sort((a, b) => {
       const isAsc = this.sort.direction === 'asc';
@@ -100,6 +101,7 @@ export class ProductstableDataSource extends DataSource<PurchaseOrderModel> {
         case 'purchaseOrderName': return compare(a.purchaseOrderName, b.purchaseOrderName, isAsc);
         case 'requiredDate': return compare(+a.requiredDate, +b.requiredDate, isAsc);
         case 'isComplited': return compare(+a.isComplited, +b.isComplited, isAsc);
+        case 'approvedBy': return compare(+a.isComplited, +b.isComplited, isAsc);
         default: return 0;
       }
     });

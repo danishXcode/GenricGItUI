@@ -52,19 +52,27 @@ POid:string;
   }
   DeletePOI(POIiD)
   {
+    console.log("Delete POI")
     console.log(this.POid);
     this.imsApiCallService.DeletePOOrderItem(this.POid,POIiD).subscribe({
-      next:data=>console.log(data),
+      next:data=>{
+        console.log(data);
+        window.location.reload();
+      }
     });
     
-    window.location.reload();
+    
   }
   OnSubmitAddItem() {
     let Poid = this.imsApiCallService.AddPurchaseOrderFormModel.value.purchaseOrderID;
     this.imsApiCallService.AddPOItem().subscribe({
-      next:data=>console.log(data)
-    }); 
+      next:data=>
+      {
+        console.log(data);
+        
     window.location.reload();
+      }
+    }); 
   }
 }
  

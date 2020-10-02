@@ -1,0 +1,29 @@
+.DashBoard{
+    height: 80%;
+    width: 100%;
+}
+
+.Roundbutton {
+    border: none;
+    background-color: lightgray;
+    padding: 20px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 32px;
+    margin: 4px 2px;
+    border-radius: 80px;
+  }
+  
+.navigation{
+    position:fixed;
+    margin-top: 5%;
+    margin-left: 20%;
+}
+td{
+text-align: center;
+}
+.purchasetable
+{
+    background-color: lightgray;
+}

@@ -7,7 +7,7 @@ export class PurchaseOrderModel {
       pending: number;
       paid: number;
       isComplited: boolean;
-      approvedBy?: null;
+      approvedBy?: string;
       requiredDate: string;
 
 }

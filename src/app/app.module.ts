@@ -28,6 +28,8 @@ import { MatTableModule } from '@angular/material/table';
 import { MatPaginatorModule } from '@angular/material/paginator';
 import { MatSortModule } from '@angular/material/sort';
 import { PurchaseOrderItmesComponent } from './IMS/purchase-order-itmes/purchase-order-itmes.component';
+import { DashBoardComponent } from './IMS/dash-board/dash-board.component';
+import { HashLocationStrategy, LocationStrategy } from '@angular/common';
 
 
 
@@ -41,6 +43,7 @@ import { PurchaseOrderItmesComponent } from './IMS/purchase-order-itmes/purchase
     PurchaseOrdersComponent,
     ProductstableComponent,
     PurchaseOrderItmesComponent,
+    DashBoardComponent,
   ],
   imports: [
     BrowserModule,
@@ -59,7 +62,7 @@ import { PurchaseOrderItmesComponent } from './IMS/purchase-order-itmes/purchase
     MatSortModule
   ],
   providers: [UMCServicesService,
-    { provide: HTTP_INTERCEPTORS, useClass: JwtInterceptor, multi: true },IMSApiCallService],
+    { provide: HTTP_INTERCEPTORS, useClass: JwtInterceptor, multi: true },IMSApiCallService,{provide: LocationStrategy, useClass: HashLocationStrategy}],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

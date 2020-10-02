@@ -1,3 +1,4 @@
+import { Router } from '@angular/router';
 import { UMCConstantsService } from './umcconstants.service';
 import { LoginComponent } from './login/login.component';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
@@ -26,7 +27,7 @@ export class UMCServicesService {
   Password : [''],
   })
 
-  constructor(private http: HttpClient,private fb : FormBuilder,_UMCConstantsService:UMCConstantsService) 
+  constructor(private http: HttpClient,private fb : FormBuilder,_UMCConstantsService:UMCConstantsService,private router: Router) 
   {
     this.currentUserSubject = new BehaviorSubject<string>(JSON.parse(localStorage.getItem('currentUser')));
     this.currentUser = this.currentUserSubject.asObservable();
@@ -43,7 +44,7 @@ export class UMCServicesService {
   }
 
 
-  Login()
+  Login(): boolean
   {
     var body = {
       UserName : this.LoginFormModel.value.UserName,
@@ -53,20 +54,22 @@ export class UMCServicesService {
     const data =  JSON.stringify(body);  
     const headers =  {
        headers: new  HttpHeaders({'Content-Type':'application/json; charset=utf-8'})
-   //  headers: new  HttpHeaders({'Content-Type':'application/json; charset=utf-8'})
     };
-   // headers.headers.append(" ('Access-Control-Allow-Headers', 'Access-Control-Allow-Origin, Content-Type, Accept, Accept-Language, Origin, User-Agent')")
-    //const config = { headers: new Hpp().set('Content-Type', 'application/json') };
-    return this.http.post<any>(this.URL+this.LoginURl, data,headers).subscribe({
+    let lg = false;
+
+     this.http.post<any>(this.URL+this.LoginURl, data,headers).subscribe({
       next: data => {
-        alert("Login success")
+        lg = true;
         console.log(data)
         var tkn = data.token.result
         localStorage.setItem('currentUser', JSON.stringify(data.token.result));
         this.currentUserSubject.next(tkn);
+        
+        this.router.navigate(["DashBoard"])
       },
-      error: error => console.error('There was an error!', error)
+      error: error => alert('There was an error!'+ error)
   });
+  return lg;
  }
 
  Register()

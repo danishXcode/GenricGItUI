@@ -62,6 +62,13 @@
                 "title": "PurchaseOrders",
                 "url": "PurchaseOrders"
             }
+        },
+        {
+            "elementName": "navbar",
+            "settings": {
+                "title": "DashBoard",
+                "url": "DashBoard"
+            }
         }
     ]
 }

@@ -1,0 +1,55 @@
+
+<div class="DashBoard">
+  <div class="jumbotron">
+    <h1 class="display-4">Dash Board</h1>
+    
+   <button class="Roundbutton  btn-lg" >
+     <a class="nav-link" routerLink="/Sales" routerLinkActive="active">
+       Sales
+    </a>
+  </button>
+
+    <p class="lead">This is a simple hero unit, a simple jumbotron-style component for calling extra attention to featured content or information.</p>
+    <hr class="my-4">
+    <hr class="my-4">
+   <table class="col-lg-6 col-md-6 purchasetable" >
+     <tr style="text-align: center;">
+       <h2><strong> Purchase Details </strong></h2>
+     </tr>
+     <tr>
+       <td>
+        Total Purchases
+       </td>
+       <td>
+         {{dashBoardData.totalPurchases}}
+       </td>
+     </tr>
+     <tr>
+      <td>
+        Total Paid
+      </td>
+      <td>
+        {{dashBoardData.totalPaid}}
+      </td>
+    </tr>
+    <tr>
+      <td>
+        Total Pending
+      </td>
+      <td>
+        {{dashBoardData.totalPending}}
+      </td>
+    </tr>
+   </table>
+    <p class="lead">
+       <a class="btn btn-primary btn-lg" role="button">
+         <a class="nav-link" routerLink="/PurchaseOrders" style="color: white;" routerLinkActive="active">
+        Purchase Order
+     </a>
+    </a>
+      
+    </p>
+  </div>
+
+
+</div>

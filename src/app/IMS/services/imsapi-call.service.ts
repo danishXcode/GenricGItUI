@@ -7,13 +7,14 @@ import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { PurchaseOrderModel, PurchaseOrderModels } from '../Models/PurchaseOder';
 import { FormControl, FormGroup, FormBuilder } from '@angular/forms';
+import { DashBoardData } from '../Models/DashBoardData';
 
 @Injectable({
   providedIn: 'root'
 })
 export class IMSApiCallService {
     
-  private  URL;AddPoURL ;GetPOSURl ;AddPOIURl;DeletePOOrderItemURL : string ="";
+  private  URL;AddPoURL ;GetPOSURl ;AddPOIURl;DeletePOOrderItemURL;GetDashBoardURL : string ="";
 
   constructor(private http: HttpClient,private fb : FormBuilder,_APIconstantsService:APIconstantsService) { 
     this.URL = _APIconstantsService.BasePurchaseOrderURL;
@@ -21,6 +22,7 @@ export class IMSApiCallService {
     this.GetPOSURl =_APIconstantsService.GetPurchaseOrderURL;
     this.AddPOIURl = _APIconstantsService.AddPurhcaseOrderItemURL;
     this.DeletePOOrderItemURL =_APIconstantsService.DeletePOOrderItemURL;
+   this.GetDashBoardURL=_APIconstantsService.GetDashBoard;  
   }
 
   
@@ -51,6 +53,10 @@ export class IMSApiCallService {
   GetById(id : any) : Observable<PurchaseOrderModel>
   {
     return this.http.get<PurchaseOrderModel>(this.URL+this.GetPOSURl).pipe(filter(p=>p.purchaseOrderName == id));
+  }
+  GetDashBoard()
+  {
+    return this.http.get<DashBoardData>(this.URL+this.GetDashBoardURL);
   }
 
   AadPurchaseOrder()
