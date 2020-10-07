@@ -1,0 +1,78 @@
+
+<div class="col-lg-6" *ngIf="div1" >
+  <form [formGroup]="IMSApiCallService.AddPartyFromModel" autocomplete="on" (submit)="OnSubmitAddParty()">
+  <div class="card2 card border-0 px-4 py-5">
+    <div class="row px-3"> <label class="mb-1">
+              <h4 class="mb-0 text-sm">Party Name </h4>
+          </label> <input class="mb-4" type="text" name="Party Name" placeholder="Enter a valid UserName" class="form-control" formControlName="partyName"> 
+       </div>
+        
+          <div class="row px-3"> <label class="mb-1">
+              <h4 class="mb-0 text-sm">contact</h4>
+          </label>
+           <input type="text" name="amount" placeholder="Enter contact" class="form-control" formControlName="contact"> 
+          </div>
+          <div class="row px-3"> <label class="mb-1">
+             <h4 class="mb-0 text-sm">Email id</h4>
+         </label>
+          <input type="text" name="quantity" placeholder="Enter emailid" class="form-control" formControlName="emailid"> 
+         </div>
+ 
+         <div hidden class="row px-3"> <label class="mb-1">
+          <h4 class="mb-0 text-sm"></h4>
+      </label>
+      </div>
+ 
+      <div class="row mb-3 px-3"> <button type="submit" class="btn btn-primary text-center">Add</button> </div>
+  </div>
+ </form>
+ </div>
+
+<div class="mat-elevation-z8">
+  <table mat-table class="full-width-table" matSort aria-label="Elements">
+    <!-- Id Column -->
+    <ng-container matColumnDef="partyName">
+      <th mat-header-cell *matHeaderCellDef mat-sort-header>Party Name</th>
+      <td mat-cell *matCellDef="let row">{{row.partyName}}</td>
+    </ng-container>
+
+    <!-- Name Column -->
+    <ng-container matColumnDef="contact">
+      <th mat-header-cell *matHeaderCellDef mat-sort-header>contact</th>
+      <td mat-cell *matCellDef="let row">{{row.contact}}</td>
+    </ng-container>
+
+      <!-- Name Column -->
+      <ng-container matColumnDef="pendingTrasaction">
+        <th mat-header-cell *matHeaderCellDef mat-sort-header>Pending Trasaction</th>
+        <td mat-cell *matCellDef="let row">{{row.pendingTrasaction}}</td>
+      </ng-container>
+
+        <!-- Name Column -->
+        <ng-container matColumnDef="totalTrasaction">
+          <th mat-header-cell *matHeaderCellDef mat-sort-header>Total Trasaction</th>
+          <td mat-cell *matCellDef="let row">{{row.totalTrasaction}}</td>
+        </ng-container>
+
+        <ng-container matColumnDef="partyId" >
+          <th mat-header-cell *matHeaderCellDef mat-sort-header style="border-right: black;">
+            <button (click)="ShowForm()" class="btn btn-primary" style="float: right;">Add Items</button></th>
+          <td mat-cell  *matCellDef="let row"  style="border-right: black;">   
+            <button type="button" class="btn btn-primary" (click)="Redirect(row.partyId)" text-center>
+                Details
+          </button>
+                <button type="button" class="btn btn-primary" (click)="DeleteParty(row.partyId)" text-center>Delete</button>
+            </td>
+        </ng-container>
+
+    <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+    <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+  </table>
+
+  <mat-paginator #paginator
+      [length]="dataSource?.data.length"
+      [pageIndex]="0"
+      [pageSize]="50"
+      [pageSizeOptions]="[25, 50, 100, 250]">
+  </mat-paginator>
+</div>

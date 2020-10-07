@@ -1,3 +1,4 @@
+import { UploadComponent } from './IMS/purchase-order/upload/upload.component';
 import { IMSApiCallService } from './IMS/services/imsapi-call.service';
 import { MaterialModule } from './material/material.module';
 import { PurchaseOrderComponent } from './IMS/purchase-order/purchase-order.component';
@@ -30,6 +31,9 @@ import { MatSortModule } from '@angular/material/sort';
 import { PurchaseOrderItmesComponent } from './IMS/purchase-order-itmes/purchase-order-itmes.component';
 import { DashBoardComponent } from './IMS/dash-board/dash-board.component';
 import { HashLocationStrategy, LocationStrategy } from '@angular/common';
+import { PartiesComponent } from './IMS/parties/parties.component';
+import { PartiesTableComponent } from './IMS/parties/parties-table/parties-table.component';
+import { PartyComponent } from './IMS/party/party.component';
 
 
 
@@ -44,6 +48,10 @@ import { HashLocationStrategy, LocationStrategy } from '@angular/common';
     ProductstableComponent,
     PurchaseOrderItmesComponent,
     DashBoardComponent,
+    PartiesComponent,
+    PartiesTableComponent,
+    PartyComponent,
+    UploadComponent,
   ],
   imports: [
     BrowserModule,

@@ -1,3 +1,5 @@
+import { PartyComponent } from './IMS/party/party.component';
+import { PartiesComponent } from './IMS/parties/parties.component';
 import { DashBoardComponent } from './IMS/dash-board/dash-board.component';
 import { PurchaseOrdersComponent } from './IMS/purchase-orders/purchase-orders.component';
 import { PurchaseOrderComponent } from './IMS/purchase-order/purchase-order.component';
@@ -16,7 +18,9 @@ const routes: Routes = [
   {path : 'getdata',component : GetdataComponent},
   {path : 'PurchaseOrders',component : PurchaseOrdersComponent},
   {path : 'PurchaseOrder/:POName',component : PurchaseOrderComponent},
-  {path : 'DashBoard',component :DashBoardComponent }
+  {path : 'DashBoard',component :DashBoardComponent },
+  {path:'Parties',component:PartiesComponent},
+ {path:'Party/:Pid',component:PartyComponent}
 ]
 
 @NgModule({

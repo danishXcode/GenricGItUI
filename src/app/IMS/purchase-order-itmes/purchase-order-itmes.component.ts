@@ -63,6 +63,11 @@ POid:string;
     
     
   }
+
+  OnPaySubmit()
+  {
+    this.imsApiCallService.PurchaseOrderPay().subscribe();
+  }
   OnSubmitAddItem() {
     let Poid = this.imsApiCallService.AddPurchaseOrderFormModel.value.purchaseOrderID;
     this.imsApiCallService.AddPOItem().subscribe({

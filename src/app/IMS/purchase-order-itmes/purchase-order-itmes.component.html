@@ -1,4 +1,5 @@
 
+
 <div class="col-lg-6" *ngIf="div1" >
  <form [formGroup]="imsApiCallService.AddPOItemFormModel" autocomplete="on" (submit)="OnSubmitAddItem()">
  <div class="card2 card border-0 px-4 py-5">
@@ -28,6 +29,8 @@
  </div>
 </form>
 </div>
+
+
 
 <div class="mat-elevation-z8 tableContainer">
   <table mat-table class="full-width-table" matSort aria-label="Elements">
@@ -64,13 +67,26 @@
     <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
     <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
   </table>
-<label>Totoal {{ TotalAmountForallTIetms }}</label>
-  <mat-paginator #paginator class="col-md-6"
+  <mat-paginator #paginator class="col-md-6" style="float: right;"
       [length]="dataSource?.data.length"
       [pageIndex]="0"
       [pageSize]="50"
       [pageSizeOptions]="[25, 50, 100, 250]">
   </mat-paginator>
+  <div class="col-lg-6 col-md-6" >
+    <form [formGroup]="imsApiCallService.PaymentDetails" autocomplete="on" (submit)="OnPaySubmit()">
+    <div class="card2 card border-0 px-4 py-5">
+            <div class="row px-3"> <label class="mb-1">
+                <h4 class="mb-0 text-sm">Amount Paid</h4>
+            </label>
+             <input type="text" name="amount" placeholder="Enter amount" class="form-control" formControlName="Amount"> 
+            </div>
+        <button type="submit" style="float: right;" class="btn btn-primary text-center">Pay</button> 
+        <input  hidden  #textbox type="text" [(ngModel)]="POid" class="form-control" formControlName="Uid"> 
+    </div>
+   </form>
+   </div>
+  
 </div>
 
 

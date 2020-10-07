@@ -24,7 +24,8 @@ export class PurchaseOrderComponent implements OnInit,OnDestroy {
   POS:PurchaseOrderModel[];
   PO: PurchaseOrderModel;
   private dialog: MatDialog;
-  matInputModule : MatInputModule ;
+  poImgNames : string [];
+    matInputModule : MatInputModule ;
   div1 : boolean = false;
 
   constructor(private route: ActivatedRoute,public imsApiCallService : IMSApiCallService) { 
@@ -54,5 +55,5 @@ export class PurchaseOrderComponent implements OnInit,OnDestroy {
     this.ApiSubscription.unsubscribe();
     this.ReadSubscription.unsubscribe();
   }
-  
+ 
 }

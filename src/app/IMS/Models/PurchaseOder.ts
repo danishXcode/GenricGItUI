@@ -1,3 +1,4 @@
+import { Party } from './party';
 export class PurchaseOrderModel {
       purchaseOrderID: string;
       purchaseOrderName: string;
@@ -9,6 +10,7 @@ export class PurchaseOrderModel {
       isComplited: boolean;
       approvedBy?: string;
       requiredDate: string;
+      party:Party
 
 }
 
@@ -18,7 +20,7 @@ export class PurchaseOrderModels {
 
 
 export class PurchaseOrderItemModel {
-      amount: number;
+      amount:number;
       itemId: string;
       itemName: string;
       purchaseOrderID: string;

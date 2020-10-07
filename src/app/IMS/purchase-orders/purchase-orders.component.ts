@@ -63,4 +63,9 @@ export class PurchaseOrdersComponent implements OnInit {
     this.imsApiCallService.AadPurchaseOrder();
     
   }
+
+  onPaySubmit()
+  {
+    this.imsApiCallService.PurchaseOrderPay();
+  }
 }

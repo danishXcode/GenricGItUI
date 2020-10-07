@@ -1,3 +1,4 @@
+import { Party } from './../IMS/Models/party';
 import { Router } from '@angular/router';
 import { Subscription } from 'rxjs';
 import { IMSApiCallService } from './../IMS/services/imsapi-call.service';
@@ -20,7 +21,7 @@ export class ProductstableComponent implements AfterViewInit, OnInit {
   dataSource: ProductstableDataSource;
   ApiSubscription : Subscription;
   div1:boolean=false;
-
+  parties:Party[];
 
   /** Columns displayed in the table. Columns IDs can be added, removed, or reordered. */
   displayedColumns = ['purchaseOrderName','approvedBy', 'requiredDate','isComplited'];
@@ -39,6 +40,14 @@ export class ProductstableComponent implements AfterViewInit, OnInit {
       {
         this.dataSource.data = data;
       }
+    });
+
+    this.imsApiCallService.GetParties().subscribe({
+    next:data=>
+    {
+      this.parties = data;
+    },
+    error:e=>console.error(e)
     });
   }
   redirect(pagename: string)

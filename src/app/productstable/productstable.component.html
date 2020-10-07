@@ -10,6 +10,15 @@
          </label>
           <input type="date" name="date" placeholder="Enter date" class="form-control" formControlName="RequiredDate"> 
          </div>
+
+
+       <select  formControlName="partyId" >
+        <option value="value" selected>Select Party</option>
+          <option *ngFor="let party of  parties" [ngValue]="party.partyId">
+            {{ party.partyName }}
+          </option>
+        </select>
+
      <div class="row mb-3 px-3"> <button type="submit" class="btn btn-blue text-center">Add</button> </div>
  </div>
 </form>
