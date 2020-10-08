@@ -1,7 +1,7 @@
-.DashBoard{
+/* .DashBoard{
     height: 80%;
     width: 100%;
-}
+} */
 
 .Roundbutton {
     border: none;
@@ -26,4 +26,5 @@ text-align: center;
 .purchasetable
 {
     background-color: lightgray;
+
 }

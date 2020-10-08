@@ -1,4 +1,7 @@
 
+footer{
+    position: relative;
+}
 p{
     color: #999;
     line-height: 25px;

@@ -37,7 +37,7 @@ export class PurchaseOrderComponent implements OnInit,OnDestroy {
     
         this.ReadSubscription = this.imsApiCallService.GetAll().subscribe(data => {
           data.forEach( e=>{
-           if(e.purchaseOrderName == this.POName)
+           if(e.purchaseOrderID == this.POName)
            {
               this.PO = e;
            }

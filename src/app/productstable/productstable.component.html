@@ -50,11 +50,17 @@
         <span [ngClass]="{'badge badge-success':row.isComplited}">
           {{row.isComplited}}
         </span>
-        <button (click)="redirect('/PurchaseOrder/'+ row.purchaseOrderName)" class="btn btn-primary"style="float: right;">
+      </td>
+    </ng-container>
+    <ng-container matColumnDef="purchaseOrderID">
+      <th mat-header-cell *matHeaderCellDef mat-sort-header>Details</th>
+      <td mat-cell *matCellDef="let row">
+        <button (click)="redirect('/PurchaseOrder/'+ row.purchaseOrderID)"  class="btn btn-primary">
           Check Details
         </button>
       </td>
     </ng-container>
+    
 
     <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
     <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>

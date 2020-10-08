@@ -24,7 +24,7 @@ export class ProductstableComponent implements AfterViewInit, OnInit {
   parties:Party[];
 
   /** Columns displayed in the table. Columns IDs can be added, removed, or reordered. */
-  displayedColumns = ['purchaseOrderName','approvedBy', 'requiredDate','isComplited'];
+  displayedColumns = ['purchaseOrderName','approvedBy', 'requiredDate','isComplited','purchaseOrderID'];
 
   constructor(public imsApiCallService : IMSApiCallService,private router: Router)
   {
