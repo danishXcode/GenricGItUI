@@ -17,7 +17,7 @@ import { MatFormFieldModule } from '@angular/material/form-field';
   templateUrl: './purchase-order.component.html',
   styleUrls: ['./purchase-order.component.css']
 })
-export class PurchaseOrderComponent implements OnInit,OnDestroy {
+export class PurchaseOrderComponent implements OnInit {
   ApiSubscription : Subscription;
   POName : string;
   ReadSubscription : Subscription;
@@ -49,11 +49,6 @@ export class PurchaseOrderComponent implements OnInit,OnDestroy {
   
   ngOnInit(): void {
     console.log("PO-ngOnInit");
-  }
-  ngOnDestroy()
-  {
-    this.ApiSubscription.unsubscribe();
-    this.ReadSubscription.unsubscribe();
   }
  
 }

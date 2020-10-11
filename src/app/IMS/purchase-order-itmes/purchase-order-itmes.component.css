@@ -8,3 +8,16 @@
 th{
   font-size: 20px;
 }
+td
+{
+  max-width: 20%;
+}
+
+input{
+  width: 100%;
+}
+
+.addpurchaseordertable
+{
+  max-width: 50%;
+}

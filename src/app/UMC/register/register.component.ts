@@ -1,3 +1,4 @@
+import { Router } from '@angular/router';
 import { UMCServicesService } from './../umcservices.service';
 import { Component, OnInit } from '@angular/core';
 
@@ -8,16 +9,27 @@ import { Component, OnInit } from '@angular/core';
 })
 export class RegisterComponent implements OnInit {
 
-  constructor(public service: UMCServicesService) { }
-
+  constructor(public service: UMCServicesService,private router: Router) { }
+  submitted = false;
   ngOnInit(): void {
   }
   onRegisterSubmit()
   {
+    this.submitted = true;
+    
+    console.log("this.service.RegistrationFormModel");
+    console.log(this.service.RegistrationFormModel);
+    if (this.service.RegistrationFormModel.invalid) {
+      return;
+   }
     console.log("On Submit called");
     this.service.Register().subscribe({
-      next: data => console.log(data),
-      error: error => console.error('There was an error!', error)
+      next: data => 
+      {
+        this.router.navigate(["Login"])
+      },
+      error: error => alert('There was an error!')
   })
   }
+  get f() { return this.service.RegistrationFormModel.controls; }
 }

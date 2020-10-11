@@ -1,3 +1,5 @@
+import { GetAllUserDetailsComponent } from './UMC/get-all-user-details/get-all-user-details.component';
+import { GetUserDetailsComponent } from './UMC/get-user-details/get-user-details.component';
 import { UploadComponent } from './IMS/purchase-order/upload/upload.component';
 import { IMSApiCallService } from './IMS/services/imsapi-call.service';
 import { MaterialModule } from './material/material.module';
@@ -34,6 +36,8 @@ import { HashLocationStrategy, LocationStrategy } from '@angular/common';
 import { PartiesComponent } from './IMS/parties/parties.component';
 import { PartiesTableComponent } from './IMS/parties/parties-table/parties-table.component';
 import { PartyComponent } from './IMS/party/party.component';
+import { RegisterUserComponent } from './UMC/register-user/register-user.component';
+import { UserManagmentComponent } from './UMC/user-managment/user-managment.component';
 
 
 
@@ -52,6 +56,10 @@ import { PartyComponent } from './IMS/party/party.component';
     PartiesTableComponent,
     PartyComponent,
     UploadComponent,
+    RegisterUserComponent,
+    UserManagmentComponent,
+    GetUserDetailsComponent,
+    GetAllUserDetailsComponent
   ],
   imports: [
     BrowserModule,
@@ -67,10 +75,11 @@ import { PartyComponent } from './IMS/party/party.component';
     MaterialModule,
     MatTableModule,
     MatPaginatorModule,
-    MatSortModule
+    MatSortModule,
   ],
   providers: [UMCServicesService,
     { provide: HTTP_INTERCEPTORS, useClass: JwtInterceptor, multi: true },IMSApiCallService,{provide: LocationStrategy, useClass: HashLocationStrategy}],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
+  entryComponents:[RegisterUserComponent]
 })
 export class AppModule { }

@@ -1,5 +1,8 @@
 {
     "APIPaths": [
-    {  "Name" : "AddPurhc"      }
+    {  
+        "Name" : "BaseURL",
+        "Value":"https://localhost:44352/user/"   
+ }
 ]
 }

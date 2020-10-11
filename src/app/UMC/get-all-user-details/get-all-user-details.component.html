@@ -1,0 +1,23 @@
+<table class="table addtable">
+    <tr>
+      
+    <th>
+        User Name
+    </th>
+    <th>
+        Email
+    </th>
+    <th>
+        Phone Number
+    </th>
+    <th>
+        Role
+    </th>
+</tr>
+<tr *ngFor="let user of userDeatailsModels">
+    <td> {{ user.userName }}</td>
+    <td>{{user.email}}</td>
+    <td>{{user.phoneNumber}}</td>
+    <td>{{user.role}}</td>
+</tr>
+</table>

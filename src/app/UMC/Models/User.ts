@@ -8,3 +8,10 @@ export class RegisterModel
         UserName : string;
         Password : string;
 }
+
+export interface UserDetailsModel {
+    userName: string;
+    email?: any;
+    phoneNumber?: any;
+    role?: any;
+}

@@ -1,16 +1,17 @@
 
-
-<div class="col-lg-6" *ngIf="div1" >
+<!-- 
+<div class="" *ngIf="div1" >
  <form [formGroup]="imsApiCallService.AddPOItemFormModel" autocomplete="on" (submit)="OnSubmitAddItem()">
- <div class="card2 card border-0 px-4 py-5">
+ <div class="card2 card border-0 px-4 py-5 col-lg-6 ">
    <div class="row px-3"> <label class="mb-1">
              <h4 class="mb-0 text-sm">ITem Name </h4>
          </label> <input class="mb-4" type="text" name="Item Name" placeholder="Enter a valid UserName" class="form-control" formControlName="itemName"> 
       </div>
        
-         <div class="row px-3"> <label class="mb-1">
-             <h4 class="mb-0 text-sm">Price</h4>
-         </label>
+         <div class="row">
+            <label class="mb-1">
+               <h4 class="mb-0 text-sm">Price</h4>
+            </label>
           <input type="text" name="amount" placeholder="Enter amount" class="form-control" formControlName="amount"> 
          </div>
          <div class="row px-3"> <label class="mb-1">
@@ -28,12 +29,50 @@
      <div class="row mb-3 px-3"> <button type="submit" class="btn btn-primary text-center">Add</button> </div>
  </div>
 </form>
-</div>
+</div> -->
+
+  
+<form [formGroup]="imsApiCallService.AddPOItemFormModel" autocomplete="on" (submit)="OnSubmitAddItem()" *ngIf="div1">
+  <table class="table addpurchaseordertable">
+    <tr>
+      <td>
+        <h4 class="mb-0 text-sm">ITem Name </h4>
+      </td>
+      <td>
+        <input type="text" name="amount" placeholder="Enter amount" class="form-control" formControlName="amount"> 
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <h4 class="mb-0 text-sm">Price</h4>
+      </td>
+      <td>
+        <input type="text" name="amount" placeholder="Enter amount" class="form-control" formControlName="amount"> 
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <h4 class="mb-0 text-sm">Quantity</h4>
+      </td>
+      <td>
+        <input type="text" name="quantity" placeholder="Enter quantity" class="form-control" formControlName="quantity"> 
+      </td>
+    </tr>
+    <tr>
+      <td>
+       <input    #textbox type="text"  hidden [(ngModel)]="POid" class="form-control" formControlName="purchaseOrderID"> 
+      </td>
+      <td>
+        <div class="row mb-3 px-3"> <button type="submit" class="btn btn-primary text-center">Add</button> </div>
+      </td>
+    </tr>
+  </table>
+  </form>
 
 
 
-<div class="mat-elevation-z8 tableContainer">
-  <table mat-table class="full-width-table" matSort aria-label="Elements">
+<div class="col-lg-6 col-md-6 col-sm-12 tableContainer">
+  <table mat-table  matSort aria-label="Elements">
     <!-- Id Column -->
     <ng-container matColumnDef="itemName">
       <th mat-header-cell *matHeaderCellDef mat-sort-header>Item Name</th>
@@ -67,13 +106,14 @@
     <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
     <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
   </table>
-  <mat-paginator #paginator class="col-md-6" style="float: right;"
+  <mat-paginator #paginator  class="col-lg-6 col-md-6 col-sm-12 col-xs-12" style="float: right;"
       [length]="dataSource?.data.length"
       [pageIndex]="0"
       [pageSize]="50"
       [pageSizeOptions]="[25, 50, 100, 250]">
   </mat-paginator>
-  <div class="col-lg-6 col-md-6" >
+</div>
+<div class="col-lg-6 col-md-6" >
     <form [formGroup]="imsApiCallService.PaymentDetails" autocomplete="on" (submit)="OnPaySubmit()">
     <div class="card2 card border-0 px-4 py-5">
             <div class="row px-3"> <label class="mb-1">
@@ -87,6 +127,6 @@
    </form>
    </div>
   
-</div>
+
 
 

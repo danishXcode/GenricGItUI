@@ -49,14 +49,23 @@
                         <div class="line"></div>
                     </div>
                     <div class="row px-3"> <label class="mb-1">
-                            <h6 class="mb-0 text-sm">UserName</h6>
-                        </label> <input class="mb-4" type="text" name="UserName" placeholder="Enter a valid UserName" class="form-control" formControlName="UserName"> </div>
-                    <div class="row px-3"> <label class="mb-1">
-                            <h6 class="mb-0 text-sm">Password</h6>
-                        </label> <input type="password" name="password" placeholder="Enter password" class="form-control" formControlName="Password"> </div>
-                    <div class="row px-3 mb-4">
-                        <div class="custom-control custom-checkbox custom-control-inline"> <input id="chk1" type="checkbox" name="chk" class="custom-control-input"> <label for="chk1" class="custom-control-label text-sm">Remember me</label> </div> <a href="#" class="ml-auto mb-0 text-sm">Forgot Password?</a>
+                        <h6 class="mb-0 text-sm">UserName</h6>
+                    </label>
+                    <input class="mb-4" type="text" placeholder="Enter a valid UserName" class="form-control"
+                        formControlName="UserName" [ngClass]="{ 'is-invalid': submitted && f.UserName.errors }">
+                    <div *ngIf="submitted &&  f.UserName.errors" class="invalid-feedback">
+                        <div *ngIf=" f.UserName.errors.required">User Name is required</div>
                     </div>
+                </div>
+                <div class="row px-3"> <label class="mb-1">
+                        <h6 class="mb-0 text-sm">Password</h6>
+                    </label>
+                    <input type="password" placeholder="Enter password" class="form-control" formControlName="Password"
+                        [ngClass]="{ 'is-invalid': submitted && f.Password.errors }">
+                    <div *ngIf="submitted &&  f.Password.errors" class="invalid-feedback">
+                        <div *ngIf=" f.Password.errors.required">password is required</div>
+                    </div>
+                </div>
                     <div class="row mb-3 px-3"> <button type="submit" class="btn btn-blue text-center">Login</button> </div>
                     <div class="row mb-4 px-3"> <small class="font-weight-bold">Don't have an account? 
                         <a class="nav-link" routerLink="/Register" routerLinkActive="active">

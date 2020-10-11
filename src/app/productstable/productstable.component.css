@@ -34,3 +34,16 @@ span
   height: 30px;
   font-size: medium;
 }
+
+.tableContainer{
+  max-width: 60%;
+  margin-bottom: 10px;
+}
+
+.col20{
+  max-width: 5%;
+}
+.addpurchaseordertable
+{
+  max-width: 50%;
+}

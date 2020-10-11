@@ -9,7 +9,7 @@ import { NgForm } from '@angular/forms';
   styleUrls: ['./login.component.css']
 })
 export class LoginComponent implements OnInit {
-
+  submitted=false;
   constructor(public service: UMCServicesService,private router: Router){}
   ngOnInit(): void {
   }
@@ -21,10 +21,17 @@ export class LoginComponent implements OnInit {
 
   onLoginSubmit()
   {
+    this.submitted = true;
+    if (this.service.LoginFormModel.invalid) {
+      return;
+   }
     console.log("onLoginSubmit");
    this.service.Login();
   
   //   this.router.navigate(['/'+pagename,{dummyData: (new Date).getTime()}]);
   // }
   };
+
+  
+  get f() { return this.service.LoginFormModel.controls; }
 }

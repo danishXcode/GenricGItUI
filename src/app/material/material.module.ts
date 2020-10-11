@@ -7,7 +7,7 @@ import {MatInputModule} from '@angular/material/input'
 import {MatGridListModule} from '@angular/material/grid-list';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import {MatTableModule} from '@angular/material/table';
-
+import {MatDialogModule} from '@angular/material/dialog';
 @NgModule({
   declarations: [],
   imports: [
@@ -16,7 +16,8 @@ import {MatTableModule} from '@angular/material/table';
     MatGridListModule,
     MatFormFieldModule,
     MatInputModule,
-    MatTableModule
+    MatTableModule,
+    MatDialogModule
    
   ],
   exports:[
@@ -24,7 +25,8 @@ import {MatTableModule} from '@angular/material/table';
     MatGridListModule,
      MatFormFieldModule,
     MatInputModule,
-    MatTableModule
+    MatTableModule,
+    MatDialogModule
    
   ],
 })

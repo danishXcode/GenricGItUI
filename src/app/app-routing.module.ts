@@ -1,3 +1,5 @@
+import { UserManagmentComponent } from './UMC/user-managment/user-managment.component';
+import { RegisterUserComponent } from './UMC/register-user/register-user.component';
 import { PartyComponent } from './IMS/party/party.component';
 import { PartiesComponent } from './IMS/parties/parties.component';
 import { DashBoardComponent } from './IMS/dash-board/dash-board.component';
@@ -20,7 +22,10 @@ const routes: Routes = [
   {path : 'PurchaseOrder/:POName',component : PurchaseOrderComponent},
   {path : 'DashBoard',component :DashBoardComponent },
   {path:'Parties',component:PartiesComponent},
- {path:'Party/:Pid',component:PartyComponent}
+ {path:'Party/:Pid',component:PartyComponent},
+ {path:'RegisterUser',component:RegisterUserComponent},
+ {path:'UserManagment/:TenantId',component:UserManagmentComponent},
+ 
 ]
 
 @NgModule({
