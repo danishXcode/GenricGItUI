@@ -1,0 +1,87 @@
+<table class="table FinancialTable">
+<tr>
+    <td>
+      <b>  Opening Balance</b>
+    </td>
+    <td>
+        {{FinancialStatementModel.openingBalance}}
+    </td>
+    <td>
+       <b> Closing Balance</b>
+    </td>
+    <td>
+        {{FinancialStatementModel.closingBalance}}
+    </td>
+</tr>
+<tr>
+    <td>
+       <b> Last updated</b>
+    </td>
+    <td>
+        {{FinancialStatementModel.user}}
+    </td>
+</tr>
+</table>
+
+<hr>
+
+
+
+<table class="table FinancialTable">
+    <tr>
+        <th>
+            Date
+        </th>
+        <th>
+            Name
+        </th>
+        <th>
+            Transaction Id
+        </th>
+        <th>
+            type
+        </th>
+        <th>
+            Amount Credit
+        </th>
+        <th>
+            Amount Debited
+        </th>
+        <th>
+            Closing Balance
+        </th>
+        <th>
+            User
+        </th>
+        <th>
+            
+        </th>
+    </tr>
+    <tr *ngFor="let st of FinancialStatementModel.statements">
+        <td>
+            {{st.created | date: 'dd/MM/yyyy hh:mm'}}
+        </td>
+        <td>
+            {{st.nameOfTransaction}}
+        </td>
+        <td>
+            
+            {{st.orderId}}
+        </td>
+        <td>
+            {{st.type}}
+        </td>
+        <td>
+            {{st.amountCredit}}
+        </td>
+        <td>
+            {{st.amountDebited}}
+        </td>
+        <td>
+            {{st.closingBalance}}
+        </td>
+        <td>
+            {{st.user}}
+        </td>
+    </tr>
+</table>

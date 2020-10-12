@@ -38,6 +38,8 @@ import { PartiesTableComponent } from './IMS/parties/parties-table/parties-table
 import { PartyComponent } from './IMS/party/party.component';
 import { RegisterUserComponent } from './UMC/register-user/register-user.component';
 import { UserManagmentComponent } from './UMC/user-managment/user-managment.component';
+import { FinancialStatementsComponent } from './IMS/DashBoard/financial-statements/financial-statements.component';
+import { FinancialStatementComponent } from './IMS/financial-statement/financial-statement.component';
 
 
 
@@ -59,7 +61,9 @@ import { UserManagmentComponent } from './UMC/user-managment/user-managment.comp
     RegisterUserComponent,
     UserManagmentComponent,
     GetUserDetailsComponent,
-    GetAllUserDetailsComponent
+    GetAllUserDetailsComponent,
+    FinancialStatementsComponent,
+    FinancialStatementComponent
   ],
   imports: [
     BrowserModule,

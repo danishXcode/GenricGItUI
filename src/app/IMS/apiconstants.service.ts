@@ -21,5 +21,10 @@ export  class APIconstantsService {
   public readonly GetParties = "Party/GetParties";
   public readonly GetParty = "Party/GetParty/";
   public readonly AddParty = "Party/AddParty";
+
+
+  //--------------------------------------------------------------------------------------------------//
+
+  public readonly GetFinancialDetails = "AccountManager/GetFinancialDetails";
   constructor() { }
 }
