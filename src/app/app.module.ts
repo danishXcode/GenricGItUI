@@ -1,3 +1,4 @@
+import { AccountServicesService } from './IMS/services/account-services.service';
 import { GetAllUserDetailsComponent } from './UMC/get-all-user-details/get-all-user-details.component';
 import { GetUserDetailsComponent } from './UMC/get-user-details/get-user-details.component';
 import { UploadComponent } from './IMS/purchase-order/upload/upload.component';
@@ -38,8 +39,10 @@ import { PartiesTableComponent } from './IMS/parties/parties-table/parties-table
 import { PartyComponent } from './IMS/party/party.component';
 import { RegisterUserComponent } from './UMC/register-user/register-user.component';
 import { UserManagmentComponent } from './UMC/user-managment/user-managment.component';
-import { FinancialStatementsComponent } from './IMS/DashBoard/financial-statements/financial-statements.component';
 import { FinancialStatementComponent } from './IMS/financial-statement/financial-statement.component';
+import { AccountsComponent } from './IMS/accounts/accounts.component';
+import { AddFundDialogueComponent } from './IMS/add-fund-dialogue/add-fund-dialogue.component';
+import { UMCConstantsService } from './UMC/umcconstants.service';
 
 
 
@@ -62,8 +65,9 @@ import { FinancialStatementComponent } from './IMS/financial-statement/financial
     UserManagmentComponent,
     GetUserDetailsComponent,
     GetAllUserDetailsComponent,
-    FinancialStatementsComponent,
-    FinancialStatementComponent
+    FinancialStatementComponent,
+    AccountsComponent,
+    AddFundDialogueComponent
   ],
   imports: [
     BrowserModule,
@@ -81,9 +85,10 @@ import { FinancialStatementComponent } from './IMS/financial-statement/financial
     MatPaginatorModule,
     MatSortModule,
   ],
-  providers: [UMCServicesService,
-    { provide: HTTP_INTERCEPTORS, useClass: JwtInterceptor, multi: true },IMSApiCallService,{provide: LocationStrategy, useClass: HashLocationStrategy}],
+  providers: [UMCServicesService,AccountServicesService,
+    { provide: HTTP_INTERCEPTORS, useClass: JwtInterceptor, multi: true },
+    IMSApiCallService,{provide: LocationStrategy, useClass: HashLocationStrategy}],
   bootstrap: [AppComponent],
-  entryComponents:[RegisterUserComponent]
+  entryComponents:[RegisterUserComponent,AddFundDialogueComponent]
 })
 export class AppModule { }

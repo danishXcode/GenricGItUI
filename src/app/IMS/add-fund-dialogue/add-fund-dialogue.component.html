@@ -1,0 +1,24 @@
+
+<button type="button" class="close" aria-label="Close" (click)="OnClose()">
+    <span aria-hidden="true">&times;</span>
+</button>
+ <form [formGroup]="accountServicesService.AddFundsFormModel" autocomplete="on" (submit)="OnSubmitAddFund()">
+    <table class="table addpurchaseordertable">
+      <tr>
+        <td>
+          <h4 class="mb-0 text-sm">Amount to be added </h4>
+        </td>
+        <td>
+          <input type="text" name="amount" placeholder="Enter amount" class="form-control" formControlName="amount"> 
+        </td>
+      </tr>
+      <tr>
+          <td>
+
+          </td>
+          <td>
+              <button type="submit">Add Fund</button>
+          </td>
+      </tr>
+    </table>
+    </form>

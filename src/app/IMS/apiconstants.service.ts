@@ -26,5 +26,6 @@ export  class APIconstantsService {
   //--------------------------------------------------------------------------------------------------//
 
   public readonly GetFinancialDetails = "AccountManager/GetFinancialDetails";
+  public readonly AddFunds = "AccountManager/AddFunds/";
   constructor() { }
 }
