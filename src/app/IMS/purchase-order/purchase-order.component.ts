@@ -3,7 +3,7 @@ import { MatInputModule } from '@angular/material/input';
 import { ActivatedRoute } from '@angular/router';
 import { IMSApiCallService } from './../services/imsapi-call.service';
 import { Subscription } from 'rxjs';
-import { Component, OnInit, OnDestroy } from '@angular/core';
+import { Component, OnInit, OnDestroy, ChangeDetectionStrategy } from '@angular/core';
 import { PurchaseOrderModel } from '../Models/PurchaseOder';
 import { Console } from 'console';
 import {MatToolbarModule} from '@angular/material/toolbar';
@@ -15,7 +15,8 @@ import { MatFormFieldModule } from '@angular/material/form-field';
 @Component({
   selector: 'app-purchase-order',
   templateUrl: './purchase-order.component.html',
-  styleUrls: ['./purchase-order.component.css']
+  styleUrls: ['./purchase-order.component.css'],
+  changeDetection:ChangeDetectionStrategy.Default
 })
 export class PurchaseOrderComponent implements OnInit {
   ApiSubscription : Subscription;

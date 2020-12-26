@@ -1,3 +1,5 @@
+import { MilkCalcComponent } from './milk-calc/milk-calc.component';
+import { ITemManagmentComponent } from './IMS/item-managment/item-managment.component';
 import { AddFundDialogueComponent } from './IMS/add-fund-dialogue/add-fund-dialogue.component';
 import { UserManagmentComponent } from './UMC/user-managment/user-managment.component';
 import { RegisterUserComponent } from './UMC/register-user/register-user.component';
@@ -28,6 +30,8 @@ const routes: Routes = [
  {path:'RegisterUser',component:RegisterUserComponent},
  {path:'UserManagment/:TenantId',component:UserManagmentComponent},
  {path:'Accounts',component:AccountsComponent},
+ {path:'ITemManagment',component:ITemManagmentComponent},
+ {path:'MilkCalc',component:MilkCalcComponent}
 ]
 
 @NgModule({

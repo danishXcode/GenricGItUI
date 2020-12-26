@@ -43,6 +43,9 @@ import { FinancialStatementComponent } from './IMS/financial-statement/financial
 import { AccountsComponent } from './IMS/accounts/accounts.component';
 import { AddFundDialogueComponent } from './IMS/add-fund-dialogue/add-fund-dialogue.component';
 import { UMCConstantsService } from './UMC/umcconstants.service';
+import { AddITemComponent } from './IMS/add-item/add-item.component';
+import { ITemManagmentComponent } from './IMS/item-managment/item-managment.component';
+import { MilkCalcComponent } from './milk-calc/milk-calc.component';
 
 
 
@@ -67,7 +70,10 @@ import { UMCConstantsService } from './UMC/umcconstants.service';
     GetAllUserDetailsComponent,
     FinancialStatementComponent,
     AccountsComponent,
-    AddFundDialogueComponent
+    AddFundDialogueComponent,
+    AddITemComponent,
+    ITemManagmentComponent,
+    MilkCalcComponent
   ],
   imports: [
     BrowserModule,

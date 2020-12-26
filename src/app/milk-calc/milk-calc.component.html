@@ -1,0 +1,101 @@
+
+
+
+<html>
+
+<title>
+    Shiva Dairy Farm 
+</title>
+
+<body style="overflow: scroll;">
+    <div class="jumbotron">
+      <h1>Shiva Dairy Farm , Milk Fat Calculator </h1>
+    </div>
+    <div class="container">
+<form [formGroup]="services.MilkCalcForm" autocomplete="on" (submit)="OnSubmit()">
+ 
+    <table class="table">
+        <tbody>
+          <tr class="row">
+            <td>
+                <label>Current Fat : </label>
+            </td>
+                <td>
+                <input  type="text" id="currentMilkFat"  formControlName="currentMilkFat">
+           </td>
+           <td>
+            <label>Expected Fat : </label>
+          </td>
+          <td>
+                <input  type="text" id="expectedMilkFat" formControlName="expectedMilkFat">
+            </td>
+          </tr>
+          <tr class="row">
+            <td>
+                <label>Total  Milk : </label>
+              </td>
+              <td>
+                <input  type="text" id="totalMilk" formControlName="totalMilk">
+           </td>
+           <td>
+            <label>Price per ltr for whole milk : </label>
+          </td>
+          <td>
+                   <input  type="text" id="pricePerltr" formControlName="pricePerltr">
+            </td>
+        
+          </tr>
+          <tr class="row">
+            <td>
+                <label> Transportation cost : </label>
+              </td>
+              <td>
+                <input  type="text" id="transportationCost" formControlName="transportationCost">
+           </td>
+           <td>
+            <button type="submit">Calculator</button>
+           </td>
+          </tr>
+        </tbody>
+      </table>
+    </form>
+  </div>
+    <div class="container">
+      <table class="table" style="margin-top: 5%;border: black;">
+        <tr class="row">
+          <td>
+            <label> Milk to used : </label>
+          </td>
+          <td class="output">
+            {{ mm.milkQnt | number:'1.2-2' }} liter
+          </td>
+
+          <td>
+            <label> Water to be used : </label>
+          </td>
+          <td>
+            {{ mm.waterQnt | number:'1.2-2' }} liter
+          </td>
+        </tr>
+        <tr class="row">
+          <td>
+            <label>Price per ltr :</label>
+          </td>
+          <td>
+           Rs {{ mm.pricePerLtr | number:'1.2-2' }} 
+          </td>
+
+          <td>
+            <label> With Transport :</label>
+          </td>
+          <td>
+          Rs  {{ mm.withTransport | number:'1.2-2' }}
+          </td>
+        </tr>
+      </table>
+    
+    </div>
+    
+</body>
+</html>
+

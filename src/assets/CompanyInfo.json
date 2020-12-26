@@ -1,14 +1,14 @@
 {
     "Companyinfo": {
-        "CompanyName": "CompanyName",
+        "CompanyName": "Shiva Dairy Farm",
         "logoURL": "assets/images/logo.jpg",
         "OfficeAddres": {
-            "Area": "930, Nana Peth, Hundekari Plaza,1st Floor, Next to Kirad Hospital",
-            "Pin": "411002",
-            "Mobile": "+91- 976 251 9030"
+            "Area": "Shivaji Nagar, Daund",
+            "Pin": "413801",
+            "Mobile": "+91- 7020237009"
         },
-        "Phone":"+91-20-6521 3786",
-        "Email":"info@sysconelevator.com"
+        "Phone":"-----",
+        "Email":"shivadairy2021@gmail.com"
 
     }
 }

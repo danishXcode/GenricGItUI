@@ -72,8 +72,9 @@ export class UMCServicesService {
     const headers =  {
        headers: new  HttpHeaders({'Content-Type':'application/json; charset=utf-8'})
     };
-    let lg = false;
-
+    let lg = false; 
+    console.log("loginURl");
+    console.log(this.URL+this.LoginURl);
      this.http.post<any>(this.URL+this.LoginURl, data,headers).subscribe({
       next: data => {
         lg = true;

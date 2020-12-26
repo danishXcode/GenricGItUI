@@ -7,9 +7,9 @@ import { APIPaths } from '../core/ModelsClasses/APIPaths';
   providedIn: 'root'
 })
 export class UMCConstantsService {
-public readonly Url ="https://localhost:44352/user/";
+//public readonly Url ="https://localhost:44352/user/";
  
- //public readonly Url :"https://ec2-13-235-81-46.ap-south-1.compute.amazonaws.com/user/"  ;
+   public readonly Url = "http://ec2-13-235-81-46.ap-south-1.compute.amazonaws.com:8080/user/"  ;
  public readonly LoginUrl ="login";
   public readonly RegisterURl = "RegisterTenant";
   public readonly RegisterUserURl = "RegisterUser";

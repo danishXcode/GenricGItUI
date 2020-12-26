@@ -13,7 +13,7 @@ export class AddFundDialogueComponent implements OnInit {
 
   constructor(public accountServicesService : AccountServicesService,
     public matDialogRef: MatDialogRef<AddFundDialogueComponent>) { }
-
+     
   
   ngOnInit(): void {
   }

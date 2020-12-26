@@ -1,0 +1,21 @@
+<div class="container">
+    <button (click)="CreateItem()">Create ITem </button>
+    <div >
+       <table class="table">
+           <tr>
+            <th>ITemName</th>
+            <th>Code</th>
+            <th>Descirption</th>
+            <th>UoM</th>
+            <th>Stock</th>
+           </tr>
+           <tr *ngFor="let item of Items">
+                <td>{{item.iTemName}}</td>
+                <td>{{item.code}}</td>
+                <td>{{item.descirption}}</td>
+                <td>{{item.uoM}}</td>
+                <td>{{item.stock}}</td>
+           </tr>
+       </table>
+    </div>
+</div>

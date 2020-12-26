@@ -5,12 +5,12 @@ import { Injectable } from '@angular/core';
 })
 export  class APIconstantsService {
 
-  public  readonly BasePurchaseOrderURL : string = "https://localhost:44352/";
+ //public  readonly BasePurchaseOrderURL : string = "https://localhost:44352/";
   
+ public  readonly BasePurchaseOrderURL : string = "http://ec2-13-235-81-46.ap-south-1.compute.amazonaws.com:8080/";
   public readonly GetPurhcaseOrderFileNames : string = "PurchaseOrder/GetFileNames/";
   public readonly UpLoadFile = "PurchaseOrder/upload";
   
- //public  readonly BasePurchaseOrderURL : stri ng = "https://ec2-13-235-81-46.ap-south-1.compute.amazonaws.com/";
   public   AddPurhcaseOrderURL :string = "PurchaseOrder/AddPo"
   public  AddPurhcaseOrderItemURL : string = "PurchaseOrder/AddPOI";
   public  GetPurchaseOrderURL : string = "PurchaseOrder/GetPOS";  
@@ -21,7 +21,8 @@ export  class APIconstantsService {
   public readonly GetParties = "Party/GetParties";
   public readonly GetParty = "Party/GetParty/";
   public readonly AddParty = "Party/AddParty";
-
+  public readonly GetITems = "ITem/GetITems";
+  public readonly AddITems = "ITem/AddITem";
 
   //--------------------------------------------------------------------------------------------------//
 

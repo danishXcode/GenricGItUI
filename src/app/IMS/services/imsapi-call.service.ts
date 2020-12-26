@@ -1,12 +1,13 @@
+import { AddITemComponent } from './../add-item/add-item.component';
 import { APIconstantsService } from './../apiconstants.service';
 import { JsonReadServiceService } from './../../services/json-read-service.service';
-import { PurchaseOrderItemModel } from './../Models/PurchaseOder';
+import { Item, PurchaseOrderItemModel } from './../Models/PurchaseOder';
 import { filter } from 'rxjs/operators';
 import { Observable } from 'rxjs';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { PurchaseOrderModel, PurchaseOrderModels } from '../Models/PurchaseOder';
-import { FormControl, FormGroup, FormBuilder } from '@angular/forms';
+import { FormControl, FormGroup, FormBuilder, Validators } from '@angular/forms';
 import { DashBoardData } from '../Models/DashBoardData';
 import { Party } from '../Models/party';
 
@@ -16,7 +17,7 @@ import { Party } from '../Models/party';
 export class IMSApiCallService {
     
   private  URL;AddPoURL ;GetPOSURl ;AddPOIURl;DeletePOOrderItemURL;GetDashBoardURL;GetPartiesURL;AddPartyURL;
-  GetPartyURL ;PurChaseOrderPayURL: string ="";
+  GetPartyURL ;PurChaseOrderPayURL;AddItemURl;GetITemURl: string ="";
 
   constructor(private http: HttpClient,private fb : 
     FormBuilder,_APIconstantsService:APIconstantsService) { 
@@ -30,6 +31,8 @@ export class IMSApiCallService {
     this.AddPartyURL = _APIconstantsService.AddParty;
     this.GetPartyURL = _APIconstantsService.GetParty;
     this.PurChaseOrderPayURL = _APIconstantsService.PuchaseOrderPay;
+    this.AddItemURl = _APIconstantsService.AddITems;
+    this.GetITemURl = _APIconstantsService.GetITems;
   }
 
   
@@ -50,6 +53,7 @@ export class IMSApiCallService {
       itemName: [''],
       purchaseOrderID: [''],
       quantity: [''],
+      ItemId:['']
       })
 
       AddPartyFromModel = this.fb.group({
@@ -63,6 +67,13 @@ export class IMSApiCallService {
         PaymentDetails = this.fb.group({
           Amount:[''],
           Uid:['']
+        })
+        onRegisterItemModel = this.fb.group({
+          ITemName :['',Validators.required],
+          Code :[''],
+         Descirption :[''],
+         UoM :['',Validators.required],
+        Stock:[''],
         })
   
      public FormDataOrderItem: PurchaseOrderItemModel;
@@ -110,7 +121,8 @@ export class IMSApiCallService {
 
    
     var body = {
-      ItemName : this.AddPOItemFormModel.value.itemName,
+      ITemId :this.AddPOItemFormModel.value.ItemId,
+     
       Quantity : parseFloat(this.AddPOItemFormModel.value.quantity),
       Amount :parseFloat( this.AddPOItemFormModel.value.amount),
       PurchaseOrderID : this.AddPOItemFormModel.value.purchaseOrderID,
@@ -158,13 +170,39 @@ export class IMSApiCallService {
   {
    var body = {
      PurhcaseId : POid,
-     ItemID :POIiD,
+     PurchaseOrderItemID :POIiD,
    };
    const data =  JSON.stringify(body); 
+   console.log(data);
+   console.log("deleted dtata");
    const headers =  {
     headers: new  HttpHeaders({'Content-Type':'application/json; charset=utf-8'})
   };
     return this.http.post(this.URL+ this.DeletePOOrderItemURL,data,headers);
+  }
+
+  AddITem()
+  {
+   
+    var body = {
+     
+      ITemName : this.onRegisterItemModel.value.ITemName,
+      Code : this.onRegisterItemModel.value.Code,
+      Descirption : this.onRegisterItemModel.value.Descirption,
+      UoM : this.onRegisterItemModel.value.UoM,
+      Stock :parseFloat(this.onRegisterItemModel.value.Stock),
+    };
+    console.log(body);
+    const data =  JSON.stringify(body);  
+    const headers =  {
+      headers: new  HttpHeaders({'Content-Type':'application/json; charset=utf-8'})
+    };
+  return this.http.post<any>(this.URL+this.AddItemURl, data,headers);
+  }
+
+  GetItems():Observable<Item[]>
+  {
+    return this.http.get<Item[]>(this.URL+this.GetITemURl)
   }
 
 }

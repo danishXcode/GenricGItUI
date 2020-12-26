@@ -1,0 +1,41 @@
+
+ <button type="button" class="close" aria-label="Close" (click)="OnClose()">
+    <span aria-hidden="true">&times;</span>
+</button>
+
+<form [formGroup]="service.onRegisterItemModel" autocomplete="on" (submit)="onRegisterItem()">
+    <div class="card2 card border-0 px-4 py-5">
+        <div class="row px-3"> <label class="mb-1">
+                <h6 class="mb-0 text-sm">ITem Name</h6>
+            </label>
+            <input class="mb-4" type="text" placeholder="Enter a valid ITemName" class="form-control"
+                formControlName="ITemName" [ngClass]="{ 'is-invalid': submitted && f.ITemName.errors }">
+            <div *ngIf="submitted &&  f.ITemName.errors" class="invalid-feedback">
+                <div *ngIf=" f.ITemName.errors.required">ITem Name is required</div>
+            </div>
+        </div>
+        <div class="row px-3"> <label class="mb-1">
+                <h6 class="mb-0 text-sm">Code</h6>
+            </label>
+            <input type="Code" placeholder="Enter Code" class="form-control" formControlName="Code"
+               >
+        </div>
+        <div class="row px-3"> <label class="mb-1">
+                <h6 class="mb-0 text-sm">Descirption</h6>
+            </label> <input type="text" name="Descirption" placeholder="Enter Email" class="form-control"
+                formControlName="Descirption">
+        </div>
+        <div class="row px-3"> <label class="mb-1">
+                <h6 class="mb-0 text-sm">UoM</h6>
+            </label> <input type="text" name="UoM" placeholder="Enter UoM" class="form-control"
+                formControlName="UoM">
+        </div>
+        <div class="row px-3"> <label class="mb-1">
+            <h6 class="mb-0 text-sm">Stock</h6>
+        </label> <input type="text" name="Stock" placeholder="Enter Stock" class="form-control"
+            formControlName="Stock">
+    </div>
+        <div class="row mb-3 px-3"> <button type="submit" class="btn btn-blue text-center">Register ITem</button> </div>
+    </div>
+
+</form>

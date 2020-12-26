@@ -69,6 +69,14 @@
                 "title": "DashBoard",
                 "url": "DashBoard"
             }
+        },
+        {
+            "elementName": "navbar",
+            "settings": {
+                "title": "MilkCalc",
+                "url": "MilkCalc"
+            }
         }
+
     ]
 }

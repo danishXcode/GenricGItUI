@@ -3,6 +3,7 @@ export class ProducInfo {
     InfoDetailsPrimary: string;
     InfoDetailsSecondary: string;
     InfoDetails: string;
+    Price:string;
 }
 
 export class ImagesUrl {
@@ -15,6 +16,7 @@ export class Product {
     ProducInfo: ProducInfo;
     ImagesUrl: ImagesUrl[];
     CardImage:ImagesUrl;
+    Price : string;
 }
 
 export class Products {

@@ -2,50 +2,54 @@
     "Products": [
         {   
             "ProductId":"1",
-            "ProductName": "Service 1",
+            "ProductName": "Raw Milk",
+            
             "ProducInfo": {
-                "InfoDetailsPrimary": "This is a longer card with supporting text below as a natural lead-in to additional content. This content is a little bit longer",
-                "InfoDetailsSecondary": " InfoDetailsSecondary Last updated 3 mins ago",
-                "InfoDetails":"This is a longer card with supporting text below as a natural lead-in to additional content. This content is a little bit longer, This is a longer card with supporting text below as a natural lead-in to additional content. This content is a little bit longer This is a longer card with supporting text below as a natural lead-in to additional content. This content is a little bit longer"
+                "InfoDetailsPrimary": "Unprocessed milk directly from farm to your Home, the purest milk you can will …## Something ",
+                "InfoDetailsSecondary": "Great for nutrition ## ",
+                "InfoDetails":"Unprocessed milk directly from farm to your Home, the purest milk you can will …## Something ",
+                "Price" : "70"
             },
             "ImagesUrl":[
                 {
-                    "ImageUrl":"assets/images/m1.jpg"
+                    "ImageUrl":"assets/images/card_m1.jpg"
                 },
                 {
-                    "ImageUrl":"assets/images/m1.jpg"
+                    "ImageUrl":"assets/images/card_m1.jpg"
                 },
                 {
-                    "ImageUrl":"assets/images/m1.jpg"
+                    "ImageUrl":"assets/images/card_m1.jpg"
                 }
             ],
-            "CardImage":"assets/images/cards/m1.jpg"
+            "CardImage":"assets/images/cards/card_m1.jpg"
         },
         {
             "ProductId":"2",
-            "ProductName": "Service 2",
+            "ProductName": "Pasteurized Milk",
             "ProducInfo": {
+                "Price" : "60",
                 "InfoDetailsPrimary": "This is a longer card with supporting text below as a natural lead-in to additional content. This content is a little bit longer",
                 "InfoDetailsSecondary": "Last updated 3 mins ago",
                 "InfoDetails":"This is a longer card with supporting text below as a natural lead-in to additional content. This content is a little bit longer, This is a longer card with supporting text below as a natural lead-in to additional content. This content is a little bit longer This is a longer card with supporting text below as a natural lead-in to additional content. This content is a little bit longer"
             },
             "ImagesUrl":[
                 {
-                    "ImageUrl":"assets/images/m2.jpg"
+                    "ImageUrl":"assets/images/Milk-in-glass-scaled.jpg"
                 },
                 {
-                    "ImageUrl":"assets/images/m1.jpg"
+                    "ImageUrl":"assets/images/Milk-in-glass-scaled.jpg"  
                 },
                 {
-                    "ImageUrl":"assets/images/m4.jpg"
+                    "ImageUrl":"assets/images/Milk-in-glass-scaled.jpg"
                 }
             ],
-            "CardImage":"assets/images/cards/m2.jpg"
+            "CardImage":"assets/images/cards/Milk-in-glass-scaled.jpg"
         },
         {
             "ProductId":"3",
-            "ProductName": "Service 3",
+            "ProductName": "Skim milk",
             "ProducInfo": {
+                "Price" : "55",
                 "InfoDetailsPrimary": "This is a longer card with supporting text below as a natural lead-in to additional content. This content is a little bit longer",
                 "InfoDetailsSecondary": "Last updated 3 mins ago",
                 "InfoDetails":"This is a longer card with supporting text below as a natural lead-in to additional content. This content is a little bit longer, This is a longer card with supporting text below as a natural lead-in to additional content. This content is a little bit longer This is a longer card with supporting text below as a natural lead-in to additional content. This content is a little bit longer"
@@ -53,16 +57,16 @@
             },
             "ImagesUrl":[
                 {
-                    "ImageUrl":"assets/images/m4.jpg"
+                    "ImageUrl":"assets/images/Skim-Milk.jpg"
                 },
                 {
-                    "ImageUrl":"assets/images/m4.jpg"
+                    "ImageUrl":"assets/images/Skim-Milk.jpg"
                 },
                 {
-                    "ImageUrl":"assets/images/m4.jpg"
+                    "ImageUrl":"assets/images/Skim-Milk.jpg"
                 }
             ],
-            "CardImage":"assets/images/cards/m3.jpg"
+            "CardImage":"assets/images/cards/Skim-Milk.jpg"
         }
     ]
 }

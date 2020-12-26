@@ -95,7 +95,6 @@ export class PurchaseOrderItmesDataSource extends DataSource<PurchaseOrderItemMo
     return data.sort((a, b) => {
       const isAsc = this.sort.direction === 'asc';
       switch (this.sort.active) {
-        case 'itemName': return compare(a.itemName, b.itemName, isAsc);
         case 'amount': return compare(+a.amount, +b.amount, isAsc);
         case 'quantity': return compare(+a.quantity, +b.quantity, isAsc);
         default: return 0;

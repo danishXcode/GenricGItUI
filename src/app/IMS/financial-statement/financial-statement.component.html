@@ -1,3 +1,13 @@
+
+fromDate
+
+<form [formGroup]="_AccountServicesService.GetStatementModel" autocomplete="on" (submit)="GetStatment()">
+    
+    fromDate  <input type="date" name="amount" placeholder="Enter amount" class="form-control" formControlName="fromDate"> 
+    toDate  <input type="date" name="amount" placeholder="Enter amount" class="form-control" formControlName="toDate"> 
+    <button type="submit">Get statements</button>
+    </form>
+
 <table class="table FinancialTable">
 <tr>
     <td>
@@ -7,7 +17,7 @@
         {{FinancialStatementModel.openingBalance}}
     </td>
     <td>
-       <b> Closing Balance</b>
+       <b> Closing Balance</b> 
     </td>
     <td>
         {{FinancialStatementModel.closingBalance}}

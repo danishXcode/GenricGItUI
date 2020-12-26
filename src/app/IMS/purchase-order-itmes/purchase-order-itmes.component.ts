@@ -1,6 +1,6 @@
 import { IMSApiCallService } from './../services/imsapi-call.service';
-import { PurchaseOrderItemModel } from './../Models/PurchaseOder';
-import { AfterViewInit, Component, Input, OnInit, ViewChild } from '@angular/core';
+import { Item, PurchaseOrderItemModel } from './../Models/PurchaseOder';
+import { AfterViewInit, ChangeDetectionStrategy, ChangeDetectorRef, Component, Input, OnInit, ViewChild } from '@angular/core';
 import { MatPaginator } from '@angular/material/paginator';
 import { MatSort } from '@angular/material/sort';
 import { MatTable } from '@angular/material/table';
@@ -9,7 +9,8 @@ import { PurchaseOrderItmesDataSource, PurchaseOrderItmesItem } from './purchase
 @Component({
   selector: 'app-purchase-order-itmes',
   templateUrl: './purchase-order-itmes.component.html',
-  styleUrls: ['./purchase-order-itmes.component.css']
+  styleUrls: ['./purchase-order-itmes.component.css'],
+  changeDetection:ChangeDetectionStrategy.Default
 })
 export class PurchaseOrderItmesComponent implements AfterViewInit, OnInit {
   @ViewChild(MatPaginator) paginator: MatPaginator;
@@ -21,20 +22,42 @@ export class PurchaseOrderItmesComponent implements AfterViewInit, OnInit {
 
   div1: boolean = false;
 POid:string;
+Items:Item[];
   /** Columns displayed in the table. Columns IDs can be added, removed, or reordered. */
-  displayedColumns = ['itemName', 'quantity', 'amount', "total","itemId"];
+  displayedColumns = ['item', 'quantity', 'amount', "total","itemId"];
    TotalAmountForallTIetms:number = 0;
-  constructor(public imsApiCallService: IMSApiCallService)
+  constructor(public imsApiCallService: IMSApiCallService,public cd: ChangeDetectorRef)
  {
 
   }
   ngOnInit() {
     this.dataSource = new PurchaseOrderItmesDataSource();
-    this.PurchaseOrderItemModels.forEach(function (POI) {
-      POI.total = POI.amount * POI.quantity;
-    });
-    this.dataSource.data = this.PurchaseOrderItemModels;
     this.POid=this._POID;
+
+    this.imsApiCallService.GetAll().subscribe(data => {
+      data.forEach( e=>{
+       if(e.purchaseOrderID == this.POid)
+       {
+          this.dataSource.data = e.items;
+          this.dataSource.data.forEach(function (POI) {
+            POI.total = POI.amount * POI.quantity;
+          });
+
+          console.log("data -- ")
+          
+          console.log( e.items)
+        }
+      })
+    })
+
+    this.imsApiCallService.GetItems().subscribe(
+      {
+        next:data=>
+        {
+          this.Items =data;
+        }
+      }
+    )
   }
 
   ngAfterViewInit() {
@@ -56,7 +79,6 @@ POid:string;
     console.log(this.POid);
     this.imsApiCallService.DeletePOOrderItem(this.POid,POIiD).subscribe({
       next:data=>{
-        console.log(data);
         window.location.reload();
       }
     });
@@ -79,9 +101,7 @@ POid:string;
     this.imsApiCallService.AddPOItem().subscribe({
       next:data=>
       {
-        console.log(data);
-        
-    window.location.reload();
+        window.location.reload();
       }
     }); 
   }

@@ -3,7 +3,7 @@ import { Router } from '@angular/router';
 import { Subscription } from 'rxjs';
 import { IMSApiCallService } from './../IMS/services/imsapi-call.service';
 import { PurchaseOrderModel } from './../IMS/Models/PurchaseOder';
-import { AfterViewInit, Component, OnInit, ViewChild } from '@angular/core';
+import { AfterViewInit, ChangeDetectionStrategy, Component, OnInit, ViewChild } from '@angular/core';
 import { MatPaginator } from '@angular/material/paginator';
 import { MatSort } from '@angular/material/sort';
 import { MatTable } from '@angular/material/table';
@@ -12,7 +12,8 @@ import { ProductstableDataSource, ProductstableItem } from './productstable-data
 @Component({
   selector: 'app-productstable',
   templateUrl: './productstable.component.html',
-  styleUrls: ['./productstable.component.css']
+  styleUrls: ['./productstable.component.css'],
+  changeDetection:ChangeDetectionStrategy.Default
 })
 export class ProductstableComponent implements AfterViewInit, OnInit {
   @ViewChild(MatPaginator) paginator: MatPaginator;
@@ -74,7 +75,8 @@ export class ProductstableComponent implements AfterViewInit, OnInit {
       {
         console.log(data);
         
-    window.location.reload();
+       this.ngOnInit();
+       this.ngAfterViewInit();
       }
     }); 
   }
